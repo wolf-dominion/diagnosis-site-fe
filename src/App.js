@@ -14,11 +14,13 @@ import './App.css'
 
 class App extends Component{
   state = {
-    loggedIn: false
+    loggedIn: false,
+    results: []
   }
 
   componentDidMount(){
     this.isLoggedIn()
+    this.getResults()
   }
 
   changeLoggedinStatus = () => {
@@ -47,6 +49,31 @@ class App extends Component{
         return response.json()
       }
     })
+  }
+
+  getResults = () => {
+    
+    const resultsURL = 'http://localhost:3000/results'
+    fetch(resultsURL, {
+      method: 'GET',
+      headers: {'content-type':'application/json',
+                'authorization': `Bearer ${localStorage.token}`}
+    })
+    .then(parseJSON)
+    .then(this.saveToState)
+    .catch(error => {
+      console.error(error)
+    })
+    
+    function parseJSON(response){
+    return response.json()
+    }
+  }
+
+  saveToState = (response) => {
+    console.log('all fave: ', response);
+    
+    this.setState({results: response})
   }
 
   render(){
