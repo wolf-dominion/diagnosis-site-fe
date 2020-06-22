@@ -4,6 +4,7 @@ import React, {Component} from 'react'
 class Signup extends Component {
     state = {
         username: "",
+        email: "",
         password: "",
         error: ""
     }
@@ -43,7 +44,7 @@ class Signup extends Component {
     }
 
     render(){
-        const {username, password} = this.state
+        const {username, email, password} = this.state
 
         return(
             <form className="signup" onSubmit={this.handleSubmit}>
@@ -55,6 +56,14 @@ class Signup extends Component {
                     name="username"
                     value={username}
                     placeholder="username"
+                    onChange={this.handleChange}>
+                </input>
+                <br />
+                <input 
+                    tpye="text"
+                    name="email"
+                    value={email}
+                    placeholder="email"
                     onChange={this.handleChange}>
                 </input>
                 <br />
