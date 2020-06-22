@@ -12,7 +12,6 @@ import Header from './components/Header'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 
-
 class App extends Component{
   state = {
     loggedIn: false
@@ -63,7 +62,7 @@ class App extends Component{
           <HomePage />
         </Route>
         <Route path='/ProfilePage'>
-          <ProfilePage removeFave={this.removeFave} faves={this.state.fm}/>
+          <ProfilePage />
         </Route>
         <Route path='/SimulationPage'>
           <SimulationPage />
