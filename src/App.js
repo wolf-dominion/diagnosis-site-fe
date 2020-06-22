@@ -63,7 +63,7 @@ class App extends Component{
           <HomePage />
         </Route>
         <Route path='/ProfilePage'>
-          <ProfilePage removeFave={this.removeFave} faves={this.state.fm}/>
+          <ProfilePage />
         </Route>
         <Route path='/SimulationPage'>
           <SimulationPage />

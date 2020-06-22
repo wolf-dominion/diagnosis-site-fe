@@ -6,7 +6,7 @@ class Signup extends Component {
         username: "",
         email: "",
         password: "",
-        error: ""
+        // error: ""
     }
 
     handleChange = (event) => {
@@ -25,22 +25,27 @@ class Signup extends Component {
                 'content-type': 'application/json'
             },
             body: JSON.stringify({user: this.state})
-        }).then(response => {
-            if(response.message.username) {
-                throw new Error("Username already taken")
-            } else {
-                return response.json()
-            }
-        })
+        }).then(parseJSON)
         .then(result => {
+            if (result.message == 1){
+                console.log('boo', result)
+                throw new Error("Username already taken") 
+            }
+            else {
+                return result
+            }
+        }).then(result => {
             if ('token' in result){
                 localStorage.setItem("token", result.token)
                 this.props.changeLoggedinStatus()
             }
             console.log('result: ', result.message.username);
             
-        })
-        .catch(error => this.setState({error: error.message}))
+        }).catch(error => this.setState({error: error.message}))
+
+        function parseJSON(response){
+            return response.json()
+        }
     }
 
     render(){
