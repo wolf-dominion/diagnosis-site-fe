@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
-
+import {Alert} from 'react-bootstrap'
 
 class Signup extends Component {
+
     state = {
         username: "",
         email: "",
@@ -32,6 +33,7 @@ class Signup extends Component {
                 throw new Error("Username already taken") 
             }
             else {
+                window.alert("This post was successfully created.")
                 return result
             }
         }).then(result => {
@@ -39,8 +41,6 @@ class Signup extends Component {
                 localStorage.setItem("token", result.token)
                 this.props.changeLoggedinStatus()
             }
-            console.log('result: ', result.message.username);
-            
         }).catch(error => this.setState({error: error.message}))
 
         function parseJSON(response){
@@ -50,39 +50,42 @@ class Signup extends Component {
 
     render(){
         const {username, email, password} = this.state
-
+        
         return(
-            <form className="signup" onSubmit={this.handleSubmit}>
-                <label>Signup:</label>
-                {this.state.error ? <p>{"Username already taken"}</p> : null}
-                <br />
-                <input 
-                    tpye="text"
-                    name="username"
-                    value={username}
-                    placeholder="username"
-                    onChange={this.handleChange}>
-                </input>
-                <br />
-                <input 
-                    tpye="text"
-                    name="email"
-                    value={email}
-                    placeholder="email"
-                    onChange={this.handleChange}>
-                </input>
-                <br />
-                <input 
-                    tpye="password"
-                    name="password"
-                    value={password}
-                    placeholder="password"
-                    onChange={this.handleChange}>
-                </input>
-                <br />
-                <br />
-                <input type="submit" value="signup"></input>
-            </form>
+            <div>
+                
+                <form className="signup" onSubmit={this.handleSubmit}>
+                    <label>Signup:</label>
+                    {this.state.error ? <p>{"Username already taken"}</p> : null}
+                    <br />
+                    <input 
+                        tpye="text"
+                        name="username"
+                        value={username}
+                        placeholder="username"
+                        onChange={this.handleChange}>
+                    </input>
+                    <br />
+                    <input 
+                        tpye="text"
+                        name="email"
+                        value={email}
+                        placeholder="email"
+                        onChange={this.handleChange}>
+                    </input>
+                    <br />
+                    <input 
+                        tpye="password"
+                        name="password"
+                        value={password}
+                        placeholder="password"
+                        onChange={this.handleChange}>
+                    </input>
+                    <br />
+                    <br />
+                    <input type="submit" value="signup"></input>
+                </form>
+            </div>
         )
     }
 }
