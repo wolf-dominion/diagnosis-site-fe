@@ -1,6 +1,8 @@
 import React from 'react'
 
-function Analysis() {
+function Analysis(props) {
+    
+console.log('props in analysis', props);
 
 return(
     <div>

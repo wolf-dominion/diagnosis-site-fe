@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { CardColumns } from "react-bootstrap";
 import ResultCard from './ResultCard'
 
 class ListofResults extends Component {
@@ -18,12 +19,10 @@ class ListofResults extends Component {
         })
     }
 
-
     render(){
         return(
             <div>
-                <h2>List of results</h2>
-                {this.props.results.length > 0 ? this.generateCards() : <p>You have not taken the assement yet.</p>}
+                {this.props.results.length > 0 ? <CardColumns> {this.generateCards()} </CardColumns>: <p>You have not taken the assement yet.</p>}
             </div>
         )
     }
