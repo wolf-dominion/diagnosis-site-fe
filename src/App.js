@@ -71,13 +71,11 @@ class App extends Component{
   }
 
   saveToState = (response) => {
-    console.log('all fave: ', response);
-    
     this.setState({results: response})
   }
 
   render(){
-    const {loggedIn} = this.state
+    const {loggedIn, results} = this.state
     
     return (
       < div className="site">
@@ -89,7 +87,7 @@ class App extends Component{
           <HomePage />
         </Route>
         <Route path='/ProfilePage'>
-          <ProfilePage />
+          <ProfilePage results={results}/>
         </Route>
         <Route path='/SimulationPage'>
           <SimulationPage />

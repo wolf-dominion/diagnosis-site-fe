@@ -9,8 +9,8 @@ class ProfilePage extends Component{
         
         return(
             <div>
-                <p>Profile page</p>
-                <ListofResults />
+                <h1>Profile page</h1>
+                <ListofResults results={this.props.results}/>
             </div>
         )
     }
