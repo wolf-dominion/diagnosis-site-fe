@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {Alert} from 'react-bootstrap'
 
 class Signup extends Component {
 
@@ -28,7 +27,7 @@ class Signup extends Component {
             body: JSON.stringify({user: this.state})
         }).then(parseJSON)
         .then(result => {
-            if (result.message == 1){
+            if (result.message === 1){
                 console.log('boo', result)
                 throw new Error("Username already taken") 
             }

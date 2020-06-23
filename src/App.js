@@ -14,11 +14,13 @@ import './App.css'
 
 class App extends Component{
   state = {
-    loggedIn: false
+    loggedIn: false,
+    results: []
   }
 
   componentDidMount(){
     this.isLoggedIn()
+    this.getResults()
   }
 
   changeLoggedinStatus = () => {
@@ -49,8 +51,31 @@ class App extends Component{
     })
   }
 
+  getResults = () => {
+    
+    const resultsURL = 'http://localhost:3000/results'
+    fetch(resultsURL, {
+      method: 'GET',
+      headers: {'content-type':'application/json',
+                'authorization': `Bearer ${localStorage.token}`}
+    })
+    .then(parseJSON)
+    .then(this.saveToState)
+    .catch(error => {
+      console.error(error)
+    })
+    
+    function parseJSON(response){
+    return response.json()
+    }
+  }
+
+  saveToState = (response) => {
+    this.setState({results: response})
+  }
+
   render(){
-    const {loggedIn} = this.state
+    const {loggedIn, results} = this.state
     
     return (
       < div className="site">
@@ -62,7 +87,7 @@ class App extends Component{
           <HomePage />
         </Route>
         <Route path='/ProfilePage'>
-          <ProfilePage />
+          <ProfilePage results={results}/>
         </Route>
         <Route path='/SimulationPage'>
           <SimulationPage />

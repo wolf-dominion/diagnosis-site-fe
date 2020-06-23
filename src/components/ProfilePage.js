@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ListofResults from './ListofResults'
+// import Analysis from './Analysis'
 
 class ProfilePage extends Component{
 
@@ -6,7 +8,10 @@ class ProfilePage extends Component{
     render(){
         
         return(
-            <p>Profile page</p>
+            <div>
+                <h1>Profile page</h1>
+                <ListofResults results={this.props.results}/>
+            </div>
         )
     }
 }
