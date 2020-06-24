@@ -39,7 +39,6 @@ class Signup extends Component {
             if ('token' in result){
                 localStorage.setItem("token", result.token)
                 this.props.changeLoggedinStatus()
-                this.props.setUsername(this.state.username)
             }
         }).catch(error => this.setState({error: error.message}))
 

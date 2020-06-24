@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import ListofResults from './ListofResults'
 import { Tab, Button, Row, Col, Nav} from "react-bootstrap";
+import ChangeUsernameForm from './ChangeUsernameForm';
 
 class ProfilePage extends Component{
+
+    state = {
+        displayForm: false
+    }
 
     getProgress = () => {
         let allResults = this.props.results
@@ -14,7 +19,7 @@ class ProfilePage extends Component{
                 for (const [key, value] of Object.entries(resultObject)) {
                     if (Number.isInteger(value)){
                         if (key !== "user_id" && key !== "id"){
-                            console.log(`${key}: ${value}`)
+                            // console.log(`${key}: ${value}`)
                             addedNum += value
                         }
                     } 
@@ -25,6 +30,10 @@ class ProfilePage extends Component{
         else {
             return `You have not taken the assessment, click "New Case" to begin.`
         }
+    }
+
+    handleClick = () => {
+        this.setState({displayForm: !this.state.displayForm})
     }
 
     render(){
@@ -57,7 +66,12 @@ class ProfilePage extends Component{
                                 <ListofResults results={this.props.results}/>
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">
-                                <p>account info</p>
+                                <h2>Account info</h2>
+                                {this.state.displayForm ? < ChangeUsernameForm displayForm={this.handleClick}/>: null}
+                                <p>Username: TestName{this.props.username} <Button onClick={this.handleClick} >Edit</Button></p>
+                                <p>Email: TestEmail{this.props.username} <Button onClick={this.handleClick} >Edit</Button></p>
+                                <p>Password: <Button onClick={this.handleClick} >Edit</Button></p>
+                                <p>Close account <Button onClick={this.handleClick} >Edit</Button></p>
                             </Tab.Pane>
                         </Tab.Content>
                         </Col>

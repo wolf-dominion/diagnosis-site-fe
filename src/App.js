@@ -15,24 +15,24 @@ import './App.css'
 class App extends Component{
   state = {
     loggedIn: false,
-    username: "",
+    user_id: 0,
     results: []
   }
 
   componentDidMount(){
     this.isLoggedIn()
-    console.log('app mounted');
-    
-    // this.getResults()
   }
 
   changeLoggedinStatus = () => {
     if (this.state.loggedIn === true){
       this.setState({loggedIn: false})
+      this.setState({user_id: 0})
+      this.setState({results: []})
       this.clearStorage()
     }
     if (this.state.loggedIn === false){
       this.setState({loggedIn: true})
+      this.getResults()
     }
   }
 
@@ -55,14 +55,7 @@ class App extends Component{
     })
   }
 
-  setUsername = (n) => {
-    console.log('setusername', n);
-    
-    this.setState({username: n})
-  }
-
   getResults = () => {
-    
     const resultsURL = 'http://localhost:3000/results'
     fetch(resultsURL, {
       method: 'GET',
@@ -81,7 +74,8 @@ class App extends Component{
   }
 
   saveToState = (response) => {
-    this.setState({results: response})
+    this.setState({results: response.results})
+    this.setState({user_id: response.user_id})
   }
 
   render(){
@@ -114,7 +108,6 @@ class App extends Component{
                   : <Authenticate
                   {...routerProps}
                   loggedIn={loggedIn}
-                  setUsername={this.setUsername}
                   changeLoggedinStatus={this.changeLoggedinStatus}/>
                 }
               </>

@@ -4,13 +4,9 @@ import ResultCard from './ResultCard'
 
 class ListofResults extends Component {
 
-    generateCards = () => {
-        console.log('props', this.props.results);
-        
+    generateCards = () => {        
         let userResults = this.props.results
-        return userResults.map(userResult => {
-            console.log('key:', userResults.indexOf(userResult));
-            
+        return userResults.map(userResult => {            
             return <ResultCard
                 key={userResults.indexOf(userResult)}
                 resultNumber={userResults.indexOf(userResult)} 
