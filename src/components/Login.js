@@ -31,10 +31,8 @@ class Login extends Component {
         })
         .then(result => {
             localStorage.setItem("token", result.token)
-            // this.props.setCats(result.cats)
-            //console.log('loggedin from login', this.props.changeLoggedinStatus)
             this.props.changeLoggedinStatus()
-
+            this.props.setUsername(this.state.username)
         })
         .catch(error => this.setState({error: error.message}))
     }

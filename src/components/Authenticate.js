@@ -22,10 +22,10 @@ class Authenticate extends Component {
                 {isLogin 
                     ? 
                         <Login 
-                            changeLoggedinStatus={this.props.changeLoggedinStatus}/> 
+                            changeLoggedinStatus={this.props.changeLoggedinStatus} setUsername={this.props.setUsername}/> 
                     : 
                         <Signup 
-                            changeLoggedinStatus={this.props.changeLoggedinStatus}/>
+                            changeLoggedinStatus={this.props.changeLoggedinStatus} setUsername={this.props.setUsername}/>
                 }
 
                 <button onClick={this.toggle}>

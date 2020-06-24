@@ -25,14 +25,12 @@ class ProfilePage extends Component{
         else {
             return `You have not taken the assessment, click "New Case" to begin.`
         }
-
     }
 
     render(){
-        
         return(
             <div>
-                <h1>Profile page</h1>
+                <h1>Welcome, {this.props.username}</h1>
                 <Button className="new-case">➕  New Case</Button>
 
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">

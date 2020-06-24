@@ -15,12 +15,15 @@ import './App.css'
 class App extends Component{
   state = {
     loggedIn: false,
+    username: "",
     results: []
   }
 
   componentDidMount(){
     this.isLoggedIn()
-    this.getResults()
+    console.log('app mounted');
+    
+    // this.getResults()
   }
 
   changeLoggedinStatus = () => {
@@ -46,9 +49,16 @@ class App extends Component{
     .then(response => {      
       if (response.status === 200){
         this.setState({loggedIn: true})
+        this.getResults()
         return response.json()
       }
     })
+  }
+
+  setUsername = (n) => {
+    console.log('setusername', n);
+    
+    this.setState({username: n})
   }
 
   getResults = () => {
@@ -75,7 +85,7 @@ class App extends Component{
   }
 
   render(){
-    const {loggedIn, results} = this.state
+    const {loggedIn, username, results} = this.state
     
     return (
       < div className="site">
@@ -87,7 +97,7 @@ class App extends Component{
           <HomePage />
         </Route>
         <Route path='/ProfilePage'>
-          <ProfilePage results={results}/>
+          <ProfilePage username={username} results={results}/>
         </Route>
         <Route path='/SimulationPage'>
           <SimulationPage />
@@ -103,7 +113,8 @@ class App extends Component{
                   ? <Redirect to='/' />
                   : <Authenticate
                   {...routerProps}
-                  loggedIn={loggedIn} 
+                  loggedIn={loggedIn}
+                  setUsername={this.setUsername}
                   changeLoggedinStatus={this.changeLoggedinStatus}/>
                 }
               </>
