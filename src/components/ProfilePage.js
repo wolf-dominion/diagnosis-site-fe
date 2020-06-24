@@ -67,11 +67,13 @@ class ProfilePage extends Component{
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">
                                 <h2>Account info</h2>
-                                {this.state.displayForm ? < ChangeUsernameForm displayForm={this.handleClick}/>: null}
-                                <p>Username: {this.props.username} <Button onClick={this.handleClick} >Edit</Button></p>
-                                <p>Email: {this.props.email} <Button onClick={this.handleClick} >Edit</Button></p>
-                                <p>Password: <Button onClick={this.handleClick} >Edit</Button></p>
-                                <p>Close account <Button onClick={this.handleClick} >Edit</Button></p>
+                                {this.state.displayForm ? < ChangeUsernameForm userInfo={this.props} displayForm={this.handleClick} />: null}
+                                <p>Username: {this.props.username}</p>
+                                <p>Email: {this.props.email}</p>
+                                <Button onClick={this.handleClick} >Edit account info</Button>
+                                <br></br>
+                                <br></br>
+                                <Button onClick={this.handleClick} >Close account</Button>
                             </Tab.Pane>
                         </Tab.Content>
                         </Col>

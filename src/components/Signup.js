@@ -16,7 +16,6 @@ class Signup extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log('handsubmit triggered');
         
         const usersURL = 'http://localhost:3000/users'
         fetch(usersURL, {
@@ -28,7 +27,6 @@ class Signup extends Component {
         }).then(parseJSON)
         .then(result => {
             if (result.message === 1){
-                console.log('boo', result)
                 throw new Error("Username already taken") 
             }
             else {
