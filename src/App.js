@@ -16,6 +16,9 @@ class App extends Component{
   state = {
     loggedIn: false,
     user_id: 0,
+    username: "",
+    email: "",
+    password: "",
     results: []
   }
 
@@ -76,10 +79,35 @@ class App extends Component{
   saveToState = (response) => {
     this.setState({results: response.results})
     this.setState({user_id: response.user_id})
+    this.getUserInfo()
+  }
+
+  getUserInfo = () => {
+    const userURL = `http://localhost:3000/users/${this.state.user_id}`
+    fetch(userURL, {
+      method: 'GET',
+      headers: {'content-type':'application/json',
+                'authorization': `Bearer ${localStorage.token}`}
+    })
+    .then(parseJSON)
+    .then(this.saveUserInfoToState)
+    .catch(error => {
+      console.error(error)
+    })
+    
+    function parseJSON(response){
+    return response.json()
+    }
+  }
+
+  saveUserInfoToState = (response) => {
+    this.setState({username: response.username})
+    this.setState({email: response.email})
+    this.setState({password: response.password_digest})
   }
 
   render(){
-    const {loggedIn, username, results} = this.state
+    const {loggedIn, user_id, username, email, password, results} = this.state
     
     return (
       < div className="site">
@@ -91,7 +119,7 @@ class App extends Component{
           <HomePage />
         </Route>
         <Route path='/ProfilePage'>
-          <ProfilePage username={username} results={results}/>
+          <ProfilePage results={results} user_id={user_id} username={username} email={email} password={password}/>
         </Route>
         <Route path='/SimulationPage'>
           <SimulationPage />
