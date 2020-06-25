@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import ListofResults from './ListofResults'
-import { Tab, Button, Row, Col, Nav} from "react-bootstrap";
+import { Tab, Button, Row, Col, Nav, Modal} from "react-bootstrap";
 import ChangeUsernameForm from './ChangeUsernameForm';
 
 class ProfilePage extends Component{
 
     state = {
-        displayForm: false
+        displayForm: false,
+        showCloseAccount: false
     }
 
     getProgress = () => {
@@ -34,6 +35,26 @@ class ProfilePage extends Component{
 
     handleClick = () => {
         this.setState({displayForm: !this.state.displayForm})
+    }
+
+    handleRemoveAccountClick = () => {
+        console.log('props: ', this.props);
+        this.setState({showCloseAccount: !this.state.showCloseAccount})
+    }
+
+    deleteAccount = () => {
+        const userURL = `http://localhost:3000/users/${this.props.user_id}`
+        fetch(userURL, {
+            method: 'DELETE',
+            headers: {
+                'authorization': `Bearer ${localStorage.token}`}
+        })
+        .then(response => {      
+            if (response.status === 200){
+                console.log('response: ', response)
+                this.props.changeLoggedinStatus()
+            }
+          })
     }
 
     render(){
@@ -73,7 +94,20 @@ class ProfilePage extends Component{
                                 <Button onClick={this.handleClick} >Edit account info</Button>
                                 <br></br>
                                 <br></br>
-                                <Button onClick={this.handleClick} >Close account</Button>
+                                <Button onClick={this.handleRemoveAccountClick} >Close account</Button>
+                                <Modal show={this.state.showCloseAccount} >
+                                    <Modal.Header>
+                                        <Modal.Title>Warning</Modal.Title>
+                                        
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                        Are you sure you want to permanently delete your account and all results?
+                                    </Modal.Body>
+                                    <Modal.Footer>
+                                        <Button className="btn btn-danger" onClick={this.deleteAccount}>Delete my account permanently</Button>
+                                        <Button onClick={this.handleRemoveAccountClick}>No, take me back to my account page</Button>
+                                    </Modal.Footer>
+                                </Modal>
                             </Tab.Pane>
                         </Tab.Content>
                         </Col>

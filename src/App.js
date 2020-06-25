@@ -119,7 +119,7 @@ class App extends Component{
           <HomePage />
         </Route>
         <Route path='/ProfilePage'>
-          <ProfilePage isLoggedIn={this.isLoggedIn} results={results} user_id={user_id} username={username} email={email} password={password}/>
+          <ProfilePage changeLoggedinStatus={this.changeLoggedinStatus} isLoggedIn={this.isLoggedIn} results={results} user_id={user_id} username={username} email={email} password={password}/>
         </Route>
         <Route path='/SimulationPage'>
           <SimulationPage />
