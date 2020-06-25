@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ChartPracticeApp from './ChartPracticeApp'
+
 
 class HomePage extends Component{
 
@@ -6,7 +8,11 @@ class HomePage extends Component{
     render(){
         
         return(
-            <p>Homepage</p>
+            <div>
+                <p>Welcome to DiagnoSIM</p>
+                <ChartPracticeApp />
+            </div>
+
         )
     }
 }

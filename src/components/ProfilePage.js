@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ListofResults from './ListofResults'
 import { Tab, Button, Row, Col, Nav, Modal} from "react-bootstrap";
 import ChangeUsernameForm from './ChangeUsernameForm';
+import ChartPracticeApp from './ChartPracticeApp';
 
 class ProfilePage extends Component{
 
@@ -54,14 +55,14 @@ class ProfilePage extends Component{
                 console.log('response: ', response)
                 this.props.changeLoggedinStatus()
             }
-          })
+        })
     }
 
     render(){
         return(
             <div>
                 <h1>Welcome, {this.props.username}</h1>
-                <Button className="new-case">➕  New Case</Button>
+                <Button className="new-case">+ New Case</Button>
 
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                     <Row>
@@ -82,6 +83,7 @@ class ProfilePage extends Component{
                         <Tab.Content>
                             <Tab.Pane eventKey="first">
                                 <p>{this.getProgress()}</p>
+                                <ChartPracticeApp userInfo={this.props}/>
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
                                 <ListofResults results={this.props.results}/>

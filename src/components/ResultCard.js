@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Button, Modal } from "react-bootstrap";
-import Analysis from './Analysis'
+import ChartPracticeApp from './ChartPracticeApp'
 
 class ResultCard extends Component{
 
@@ -23,6 +23,7 @@ class ResultCard extends Component{
     }
 
     render(){
+        let userInfo = [{results: this.props.result}]
         return (
             <>
             <Card style={{ width: '18rem' }}>
@@ -43,8 +44,8 @@ class ResultCard extends Component{
                     <Button className="btn btn-danger" onClick={this.handleClick}>x</Button>
                 </Modal.Header>
                 <Modal.Body>
-                    Body
-                    {<Analysis result={this.props.result}/>}
+                    {/* <ChartPracticeApp /> */}
+                    {/* {<Analysis result={this.props.result}/>} */}
                 </Modal.Body>
                 <Modal.Footer>
                     <Button onClick={this.handleDownload}>Download PDF</Button>
