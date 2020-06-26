@@ -53,9 +53,9 @@ function ChartPracticeApp(props) {
     props.userInfo.results.map( result => {
       let object = {}
       object["year"] = 1920 + (props.userInfo.results.indexOf(result) * 7)
-      object["empathy"] = result["empathy"] * 25
-      object["communication"] = result["communication"] * 25
-      object["sharedecision"] = result["sharedecision"] * 25
+      object["Empathy"] = result["empathy"] * 25
+      object["Communication"] = result["communication"] * 25
+      object["Shared-Decisions"] = result["sharedecision"] * 25
       dataArray.push(object)
     })
     //console.log('dataArray', dataArray)

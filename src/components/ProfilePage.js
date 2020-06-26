@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ListofResults from './ListofResults'
-import { Tab, Button, Row, Col, Nav, Modal} from "react-bootstrap";
+import { Tab, Button, Row, Col, Nav, Modal, CardDeck} from "react-bootstrap";
 import ChangeUsernameForm from './ChangeUsernameForm';
 import ChartPracticeApp from './ChartPracticeApp';
 
@@ -60,7 +60,7 @@ class ProfilePage extends Component{
 
     render(){
         return(
-            <div>
+            <div className="main-render-div">
                 <h1>Welcome, {this.props.username}</h1>
                 <Button className="new-case">+ New Case</Button>
 
@@ -86,7 +86,9 @@ class ProfilePage extends Component{
                                 <ChartPracticeApp userInfo={this.props}/>
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
-                                <ListofResults results={this.props.results}/>
+                                <CardDeck>
+                                    <ListofResults results={this.props.results}/>
+                                </CardDeck>
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">
                                 <h2>Account info</h2>

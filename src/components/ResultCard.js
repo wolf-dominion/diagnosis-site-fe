@@ -44,7 +44,7 @@ class ResultCard extends Component{
                     <Button className="btn btn-danger" onClick={this.handleClick}>x</Button>
                 </Modal.Header>
                 <Modal.Body>
-                    {/* <ChartPracticeApp /> */}
+                    <ChartPracticeApp userInfo={this.props}/>
                     {/* {<Analysis result={this.props.result}/>} */}
                 </Modal.Body>
                 <Modal.Footer>

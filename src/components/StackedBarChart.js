@@ -17,10 +17,10 @@ import useResizeObserver from "./UseResizeObserver";
 
 function StackedBarChart({ dataA, dataB, keys, colors }) {
 
-  //console.log('dataA', data)
-  //console.log('dataB', dataB)
+  console.log('dataA', dataA)
+  console.log('dataB', dataB)
 
-  let data = dataA
+  let data = dataB
 
   const svgRef = useRef();
   const wrapperRef = useRef();
@@ -42,10 +42,6 @@ function StackedBarChart({ dataA, dataB, keys, colors }) {
       0,
       max(layers, layer => max(layer, sequence => sequence[1]))
     ];
-
-    console.log('data', data)
-    console.log('stackGen for data: ',stackGenerator(data))
-    console.log('extent', extent)
 
     // scales
     const xScale = scaleBand()
@@ -70,13 +66,7 @@ function StackedBarChart({ dataA, dataB, keys, colors }) {
       .attr("x", sequence => xScale(sequence.data.year))
       .attr("width", xScale.bandwidth())
       .attr("y", sequence => yScale(sequence[1]))
-      .attr("height", sequence => {
-          console.log('sequence', sequence)
-          console.log('a: ',yScale(sequence[0]) )
-          console.log('b: ', yScale(sequence[1]))
-          let thing = yScale(sequence[0]) - yScale(sequence[1])
-          return thing ? thing : 10
-      })
+      .attr("height", sequence => yScale(sequence[0]) - yScale(sequence[1]))
         
       // .attr("height", 50);
 
