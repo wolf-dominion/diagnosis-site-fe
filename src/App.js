@@ -9,8 +9,10 @@ import ProfilePage from './components/ProfilePage'
 import HomePage from './components/HomePage'
 import Header from './components/Header'
 
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
+import './App.scss'
+// import 'bootswatch/dist/minty/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 class App extends Component{
   state = {
@@ -110,10 +112,10 @@ class App extends Component{
     const {loggedIn, user_id, username, email, password, results} = this.state
     
     return (
-      < div className="site">
-        
+      
       <Router>
         <Header loggedIn={loggedIn} changeLoggedinStatus={this.changeLoggedinStatus}/>
+        <div className="app">
 
         <Route exact path='/'>
           <HomePage />
@@ -142,8 +144,8 @@ class App extends Component{
             )
           }}
         />
+    </div>
       </Router>
-          </div>
     )
   }
 }

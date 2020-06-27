@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../App.css'
+import '../App.scss'
 import StackedBarChart from "./StackedBarChart";
 
 
@@ -39,17 +39,14 @@ const dataA = [
 const allKeys = ["Empathy", "Communication", "Shared-Decisions"];
 
 const colors = {
-  "Empathy": "green",
-  "Communication": "orange",
-  "Shared-Decisions": "purple"
+  "Empathy": "#139647",
+  "Communication": "#db3c26",
+  "Shared-Decisions": "#4267b1"
 };
 
 function ChartPracticeApp(props) {
 
-  //console.log('props: ', props.userInfo.results)
-
     let dataArray = []
-    //console.log("props:", props.userInfo.results)
     props.userInfo.results.map( result => {
       let object = {}
       object["year"] = 1920 + (props.userInfo.results.indexOf(result) * 7)
@@ -58,14 +55,15 @@ function ChartPracticeApp(props) {
       object["Shared-Decisions"] = result["sharedecision"] * 25
       dataArray.push(object)
     })
-    //console.log('dataArray', dataArray)
 
     let dataB = dataArray
 
   const [keys, setKeys] = useState(allKeys);
   return (
     <React.Fragment>
-      <h2>Bar chart</h2>
+      <p>- Each bar represents an assessment you have taken.</p>
+      <p>- Your goal is to have 50 total points in each domain (color) in an assessment</p>
+      <h4>My progress</h4>
       <StackedBarChart dataA={dataA} dataB={dataB} keys={keys} colors={colors} />
 
       <div className="fields">

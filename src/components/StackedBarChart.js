@@ -17,9 +17,6 @@ import useResizeObserver from "./UseResizeObserver";
 
 function StackedBarChart({ dataA, dataB, keys, colors }) {
 
-  console.log('dataA', dataA)
-  console.log('dataB', dataB)
-
   let data = dataB
 
   const svgRef = useRef();
@@ -59,7 +56,11 @@ function StackedBarChart({ dataA, dataB, keys, colors }) {
       .data(layers)
       .join("g")
       .attr("class", "layer")
-      .attr("fill", layer => colors[layer.key])
+      .attr("fill", layer => {
+        
+        console.log('color: ', colors[layer.key])
+        return colors[layer.key]
+      })
       .selectAll("rect")
       .data(layer => layer)
       .join("rect")
@@ -67,10 +68,6 @@ function StackedBarChart({ dataA, dataB, keys, colors }) {
       .attr("width", xScale.bandwidth())
       .attr("y", sequence => yScale(sequence[1]))
       .attr("height", sequence => yScale(sequence[0]) - yScale(sequence[1]))
-        
-      // .attr("height", 50);
-
-      console.log('svg: ', svg)
 
     // axes
     const xAxis = axisBottom(xScale);

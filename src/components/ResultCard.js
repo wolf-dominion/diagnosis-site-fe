@@ -23,7 +23,6 @@ class ResultCard extends Component{
     }
 
     render(){
-        let userInfo = [{results: this.props.result}]
         return (
             <>
             <Card style={{ width: '18rem' }}>
@@ -40,11 +39,12 @@ class ResultCard extends Component{
             </Card>
             <Modal show={this.state.show} >
                 <Modal.Header>
-                    <Modal.Title>Hello</Modal.Title>
+                    <Modal.Title>Assessment Results</Modal.Title>
                     <Button className="btn btn-danger" onClick={this.handleClick}>x</Button>
                 </Modal.Header>
                 <Modal.Body>
-                    <ChartPracticeApp userInfo={this.props}/>
+                    <p>Graph here</p>
+                    {/* <ChartPracticeApp userInfo={this.props}/> */}
                     {/* {<Analysis result={this.props.result}/>} */}
                 </Modal.Body>
                 <Modal.Footer>

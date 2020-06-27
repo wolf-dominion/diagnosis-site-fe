@@ -60,7 +60,8 @@ class ProfilePage extends Component{
 
     render(){
         return(
-            <div className="main-render-div">
+            // <div className="main-render-div">
+            <>
                 <h1>Welcome, {this.props.username}</h1>
                 <Button className="new-case">+ New Case</Button>
 
@@ -117,7 +118,7 @@ class ProfilePage extends Component{
                         </Col>
                     </Row>
                     </Tab.Container>
-            </div>
+            </>
         )
     }
 }

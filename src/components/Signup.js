@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Form, Button} from "react-bootstrap";
 
 class Signup extends Component {
 
@@ -51,37 +52,34 @@ class Signup extends Component {
         return(
             <div>
                 
-                <form className="signup" onSubmit={this.handleSubmit}>
-                    <label>Signup:</label>
-                    {this.state.error ? <p>{"Username already taken"}</p> : null}
-                    <br />
-                    <input 
-                        tpye="text"
-                        name="username"
-                        value={username}
-                        placeholder="username"
-                        onChange={this.handleChange}>
-                    </input>
-                    <br />
-                    <input 
-                        tpye="text"
-                        name="email"
-                        value={email}
-                        placeholder="email"
-                        onChange={this.handleChange}>
-                    </input>
-                    <br />
-                    <input 
-                        tpye="password"
-                        name="password"
-                        value={password}
-                        placeholder="password"
-                        onChange={this.handleChange}>
-                    </input>
-                    <br />
-                    <br />
-                    <input type="submit" value="signup"></input>
-                </form>
+                <Form className="signup" onSubmit={this.handleSubmit} style={{"width" : "50%"}}>
+                    <Form.Group controlId="formUpdateUserInfo">
+                        <Form.Label>Signup:</Form.Label>
+                        {this.state.error ? <p>{"Username already taken"}</p> : null}
+                        <Form.Control 
+                            tpye="text"
+                            name="username"
+                            value={username}
+                            placeholder="username"
+                            onChange={this.handleChange}/>
+                        <Form.Control 
+                            tpye="text"
+                            name="email"
+                            value={email}
+                            placeholder="email"
+                            onChange={this.handleChange}/>
+                        <Form.Control
+                            tpye="password"
+                            name="password"
+                            value={password}
+                            placeholder="password"
+                            onChange={this.handleChange}/>
+                    </Form.Group>
+                    <Button variant="primary" type="submit">
+                        Signup
+                    </Button>
+                    {/* <input type="submit" value="signup"></input> */}
+                </Form>
             </div>
         )
     }
