@@ -14,7 +14,7 @@ class HomePage extends Component{
                         <h1 id="home-page-info">DiagnoSIM</h1>
                         <h1 id="home-page-info2">Interpersonal Skills Simulation</h1>
                         <span className="home-page-info3">
-                            Assess your communication Skills
+                            Assess your communication effectiveness
                         </span>
                         <br></br>
                         <span className="home-page-info3">
@@ -26,7 +26,7 @@ class HomePage extends Component{
                         </span>
                     </div>
                 </div>
-                <div className={"container-fluid p-0"}>
+                {/* <div className={"container-fluid p-0"}>
                     <div className="row">
                         <div style={{backgroundColor: "gold"}} className={"col"}> 
                             .col 1
@@ -44,7 +44,7 @@ class HomePage extends Component{
                             .col 1
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
 
         )
