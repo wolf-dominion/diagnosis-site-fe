@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, Button, Modal } from "react-bootstrap";
 import ChartPracticeApp from './ChartPracticeApp'
+import ChartForSingleResult from './ChartForSingleResult';
 
 class ResultCard extends Component{
 
@@ -44,6 +45,7 @@ class ResultCard extends Component{
                 </Modal.Header>
                 <Modal.Body>
                     <p>Graph here</p>
+                    < ChartForSingleResult result={this.props}/>
                     {/* <ChartPracticeApp userInfo={this.props}/> */}
                     {/* {<Analysis result={this.props.result}/>} */}
                 </Modal.Body>

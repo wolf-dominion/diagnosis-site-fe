@@ -37,18 +37,19 @@ function StackedBarChart({ dataA, dataB, keys, colors }) {
     const layers = stackGenerator(data);
     const extent = [
       0,
-      max(layers, layer => max(layer, sequence => sequence[1]))
+      max(layers, layer => max(layer, sequence => sequence[1])+1)
     ];
-
+    
     // scales
     const xScale = scaleBand()
       .domain(data.map(d => d.year))
-      .range([0, width])
-      .padding(0.25);
+      // .range([0, (width)])
+      .range([30, (width - (width * 0.2))])
+      .padding(0.15);
 
     const yScale = scaleLinear()
       .domain(extent)
-      .range([height, 0]);
+      .range([height-16, 0]);
 
     // rendering
     svg
@@ -66,14 +67,14 @@ function StackedBarChart({ dataA, dataB, keys, colors }) {
       .join("rect")
       .attr("x", sequence => xScale(sequence.data.year))
       .attr("width", xScale.bandwidth())
-      .attr("y", sequence => yScale(sequence[1]))
+      .attr("y", sequence => yScale(sequence[1])-3)
       .attr("height", sequence => yScale(sequence[0]) - yScale(sequence[1]))
 
     // axes
     const xAxis = axisBottom(xScale);
     svg
       .select(".x-axis")
-      .attr("transform", `translate(0, ${height + 302})`)
+      .attr("transform", `translate(0, ${height-20})`)
       .call(xAxis);
 
     const yAxis = axisLeft(yScale);

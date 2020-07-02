@@ -49,10 +49,10 @@ function ChartPracticeApp(props) {
     let dataArray = []
     props.userInfo.results.map( result => {
       let object = {}
-      object["year"] = 1920 + (props.userInfo.results.indexOf(result) * 7)
-      object["Empathy"] = result["empathy"] * 25
-      object["Communication"] = result["communication"] * 25
-      object["Shared-Decisions"] = result["sharedecision"] * 25
+      object["year"] = props.userInfo.results.indexOf(result)+1
+      object["Empathy"] = result["empathy"]
+      object["Communication"] = result["communication"]
+      object["Shared-Decisions"] = result["sharedecision"]
       dataArray.push(object)
     })
 
@@ -62,7 +62,7 @@ function ChartPracticeApp(props) {
   return (
     <React.Fragment>
       <p>- Each bar represents an assessment you have taken.</p>
-      <p>- Your goal is to have 50 total points in each domain (color) in an assessment</p>
+      <p>- Your goal is to have 3 total points in each domain (color) in an assessment, so 3 points in Empathy, 3 in Communication, and 3 in Shared-Decisions.</p>
       <h4>My progress</h4>
       <StackedBarChart dataA={dataA} dataB={dataB} keys={keys} colors={colors} />
 
