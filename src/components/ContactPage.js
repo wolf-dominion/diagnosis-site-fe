@@ -6,7 +6,11 @@ class ContactPage extends Component{
     render(){
         
         return(
-            <p>Contact page</p>
+            <div>
+                <div className="contact-form-container">
+                    
+                </div>
+            </div>
         )
     }
 }
