@@ -63,7 +63,7 @@ class ProfilePage extends Component{
             // <div className="main-render-div">
             <>
                 <h1>Welcome, {this.props.username}</h1>
-                <Button className="new-case">+ New Case</Button>
+                <Button href="SimulationPage" className="new-case">+ New Case</Button>
 
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                     <Row>

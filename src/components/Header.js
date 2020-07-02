@@ -7,7 +7,7 @@ function Header({loggedIn, changeLoggedinStatus}) {
     //console.log('loggedIn from Header: ', loggedIn);
     
     return(
-            <Navbar className="w-auto p-3" collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar className="w-auto p-3 fixed-top" collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Navbar.Brand as={Link} to="/">DiagnoSIM</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -29,7 +29,6 @@ function Header({loggedIn, changeLoggedinStatus}) {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-
     )
 
 }

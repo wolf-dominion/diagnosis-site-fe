@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap');
 
-// *{ border: 1px solid red; }
+
 
 .App {
   text-align: center;
@@ -102,6 +102,7 @@ span {
 }
 
 #home-page-image-div {
+  position: relative;
   background-size: cover;
   height: auto;
   width: auto;
@@ -133,16 +134,124 @@ span {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -1;
 }
 
-#home-page-info-container {
-  position: absolute;
-  top: 270px;
-  left: 50px;
-  width: 45%;
-  background: rgba(6, 212, 201, 0.5); 
-  border-radius: 25px;
+#home-page-background {
+  background-image: url('./components/images/whitecoat.jpg');
+  margin-top: 4.5rem;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-size: cover;
 }
+
+.sim-page-container {
+  margin-top: 4.5rem;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+#intro-text-container {
+  margin-top: 10rem;
+  // margin-left: 1rem;
+  text-align: center;
+}
+
+.bold-font {
+  font-weight: bold;
+  animation: slide-up 2s;
+}
+
+@keyframes slide-up {
+  from {
+        
+    opacity: .25;
+    line-height: 200px;
+}
+to {
+    
+    opacity: 1;
+    line-height: 38px;
+}
+}
+
+#home-page-buttons {
+  padding-top: 10%;
+}
+
+#learn-more {
+  padding-left: 30%;
+}
+
+#sign-up {
+  padding-right: 30%;
+}
+
+#second-half-home-page {
+  padding-top: 18rem;
+}
+
+.about-site-text {
+  padding-left: 5rem;
+}
+
+.about-site-header {
+  padding-top: 30px;
+}
+
+.icon-size {
+  min-width: 25%;
+  max-width: 100%;
+  max-height: 100%;
+
+}
+
+#heart-container {
+  padding-top: 20px;
+  padding-bottom: 3rem;
+  // padding-left: 50%;
+  margin: auto;
+  
+}
+#home-page-footer {
+  background-color: #8cc896;
+  height: 10%;
+}
+
+#icons-home-page-container {
+  padding-right: 5rem;
+}
+
+.icon-size2 {
+
+  max-height: 40%;
+  padding-top: 50%;
+  margin-left: 20%;
+}
+
+#center-welcome {
+  text-align: center;
+}
+
+#sim-title {
+  margin: auto;
+}
+
+#sim-header {
+  margin: auto;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+#sim-explanation {
+  margin: auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #8cc896;
+}
+
+// *{ border: 1px solid red; }
+
 
 @import "~bootswatch/dist/minty/variables";
 
@@ -155,6 +264,8 @@ span {
 }
 
 .unity-container {
+  margin: auto;
+  padding-top: 20px;
   height: 500px;
   width: 800px;
 }
