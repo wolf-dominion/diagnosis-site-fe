@@ -52,7 +52,7 @@ class Signup extends Component {
         return(
             <div>
                 
-                <Form className="signup" onSubmit={this.handleSubmit} style={{"width" : "50%"}}>
+                <Form className="auth" onSubmit={this.handleSubmit}>
                     <Form.Group controlId="formUpdateUserInfo">
                         <Form.Label>Signup:</Form.Label>
                         {this.state.error ? <p>{"Username already taken"}</p> : null}
