@@ -123,12 +123,6 @@ class App extends Component{
             <Signup />
           </div>
         </Route>
-        {/* <Route path='/ProfilePage'>
-          <ProfilePage changeLoggedinStatus={this.changeLoggedinStatus} isLoggedIn={this.isLoggedIn} results={results} user_id={user_id} username={username} email={email} password={password}/>
-        </Route>
-        <Route path='/SimulationPage'>
-          <SimulationPage />
-        </Route> */}
         <Route  path="/ProfilePage"
           render={(routerProps)=> {
             return (

@@ -1,37 +1,50 @@
 import React, { Component } from 'react'
+import { Form, Button} from "react-bootstrap";
+
 
 class ContactPage extends Component{
 
-    // componentDidMount() {
-    //     const script = document.createElement("script");
-    //     script.src = "/static/libs/your_script.js";
-    //     script.async = true;
-    //     script.onload = () => this.scriptLoaded();
-      
-    //     document.body.appendChild(script);
-    //   }
-
-
-    generateSvg = () => {
-        return <svg width="80" height="80">
-            <polygon points="40,40 80,0 80,80"/>
-            </svg>
+    state = {
+        name: "",
+        email: "",
+        message: "",
+        // error: ""
     }
 
-    // createPdf = () => {
-    //     const SVGtoPDF = require('svg-to-pdfkit');
-    //     SVGtoPDF(document, this.generateSvg(), 0, 0);
-    //     console.log('SVGtopdf', SVGtoPDF);
-        
-    // }
-
-
     render(){
-        const svgItem = this.generateSvg()
+
+        const {name, email, message} = this.state
+
         return(
             <div>
                 <div className="contact-form-container">
-                    {svgItem}
+                    <Form className="auth" onSubmit={this.handleSubmit}>
+                        <Form.Group controlId="formUpdateUserInfo">
+                            <Form.Label>Contact me:</Form.Label>
+                            <Form.Control 
+                                tpye="text"
+                                name="name"
+                                value={name}
+                                placeholder="name"
+                                onChange={this.handleChange}/>
+                            <Form.Control 
+                                tpye="text"
+                                name="email"
+                                value={email}
+                                placeholder="email"
+                                onChange={this.handleChange}/>
+                            <Form.Control
+                                tpye="text"
+                                name="message"
+                                value={message}
+                                placeholder="Write message here."
+                                onChange={this.handleChange}/>
+                        </Form.Group>
+                        <Button variant="primary" type="submit">
+                            send
+                        </Button>
+                        {/* <input type="submit" value="signup"></input> */}
+                    </Form>
                 </div>
             </div>
         )

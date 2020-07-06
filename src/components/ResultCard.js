@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { Card, Button, Modal } from "react-bootstrap";
 import ChartPracticeApp from './ChartPracticeApp'
 import ChartForSingleResult from './ChartForSingleResult';
+import PDFDocument from '@react-pdf/pdfkit';
+
+let blobStream  = require('blob-stream');
+let SVGtoPDF = require('svg-to-pdfkit');
 
 class ResultCard extends Component{
 
@@ -20,7 +24,20 @@ class ResultCard extends Component{
     }
 
     handleDownload = () => {
+        console.log('svgtopdf: ', SVGtoPDF)
 
+        let doc = new PDFDocument({compress: false});
+        let svg = document.querySelector(`#result-${this.props.result.id}`);
+
+        const stream = doc.pipe(blobStream());
+        let createdPDF = SVGtoPDF(doc, svg, 0, 0);
+        doc.end();
+        stream.on('finish', function() {
+        // get a blob you can do whatever you like with
+        const blob = stream.toBlob('application/pdf');
+        const url = stream.toBlobURL('application/pdf');
+        window.location = url
+        })
     }
 
     render(){
