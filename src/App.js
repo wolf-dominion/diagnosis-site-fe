@@ -117,12 +117,42 @@ class App extends Component{
         <Route exact path='/'>
           <HomePage />
         </Route>
-        <Route path='/ProfilePage'>
+        {/* <Route path='/ProfilePage'>
           <ProfilePage changeLoggedinStatus={this.changeLoggedinStatus} isLoggedIn={this.isLoggedIn} results={results} user_id={user_id} username={username} email={email} password={password}/>
         </Route>
         <Route path='/SimulationPage'>
           <SimulationPage />
-        </Route>
+        </Route> */}
+        <Route  path="/ProfilePage"
+          render={(routerProps)=> {
+            return (
+              <>
+                { this.state.loggedIn
+                  ? <ProfilePage changeLoggedinStatus={this.changeLoggedinStatus} isLoggedIn={this.isLoggedIn} results={results} user_id={user_id} username={username} email={email} password={password}/>
+                  : <Authenticate
+                  {...routerProps}
+                  loggedIn={loggedIn}
+                  changeLoggedinStatus={this.changeLoggedinStatus}/>
+                }
+              </>
+            )
+          }}
+        />
+        <Route  path="/SimulationPage"
+          render={(routerProps)=> {
+            return (
+              <>
+                { this.state.loggedIn
+                  ? <SimulationPage />
+                  : <Authenticate
+                  {...routerProps}
+                  loggedIn={loggedIn}
+                  changeLoggedinStatus={this.changeLoggedinStatus}/>
+                }
+              </>
+            )
+          }}
+        />
         <Route path='/ContactPage'>
           <ContactPage />
         </Route>
