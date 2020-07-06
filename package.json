@@ -16,7 +16,8 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-unity-webgl": "^7.1.10"
+    "react-unity-webgl": "^7.1.10",
+    "svg-to-pdfkit": "^0.1.8"
   },
   "scripts": {
     "start": "react-scripts start",

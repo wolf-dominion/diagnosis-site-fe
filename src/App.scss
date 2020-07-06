@@ -250,8 +250,22 @@ to {
   background-color: #8cc896;
 }
 
-// *{ border: 1px solid red; }
+.contact-form-container {
+  padding-top: 100px;
+}
 
+.auth-button {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.authenticate {
+  padding-top: 130px;
+  margin: auto;
+  width: 50%;
+}
+
+// *{ border: 1px solid red; }
 
 @import "~bootswatch/dist/minty/variables";
 

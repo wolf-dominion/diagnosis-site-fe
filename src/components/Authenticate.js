@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Button} from "react-bootstrap";
 
 import Login from './Login'
 import Signup from './Signup'
@@ -27,10 +28,11 @@ class Authenticate extends Component {
                         <Signup 
                             changeLoggedinStatus={this.props.changeLoggedinStatus}/>
                 }
-
-                <button onClick={this.toggle}>
-                    {isLogin ? "Sign Up?" : "Login?"}
-                </button>
+                <div className="auth-button">
+                    <Button onClick={this.toggle}>
+                        {isLogin ? "Sign Up?" : "Login?"}
+                    </Button>
+                </div>
             </div>
         )
     }
