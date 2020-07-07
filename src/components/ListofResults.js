@@ -11,6 +11,7 @@ class ListofResults extends Component {
                 key={userResults.indexOf(userResult)}
                 resultNumber={userResults.indexOf(userResult)} 
                 result={userResult}
+                username={this.props.username}
                 />
         })
     }

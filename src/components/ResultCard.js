@@ -39,23 +39,29 @@ class ResultCard extends Component{
         let svg = document.querySelector(`#result-${this.props.result.id}`);
 
         const stream = doc.pipe(blobStream());
-        let createdPDF = SVGtoPDF(doc, svg, 0, 0, {'preserveAspectRatio': 'none'});
+        let createdPDF = SVGtoPDF(doc, svg, 150, 150, {'preserveAspectRatio': 'none'});
         
-        doc.text('Hello!', 100, 100)
+        doc.fontSize(20)
+            .text(`Survey Results for ${this.props.username}`, 170, 100)
 
-        // doc.fillColor('green')
-        //     .text("wohoh", {
-        //         width: 465,
-        //         continued: true
-        //     }).fillColor('red')
-        //     .text("weeeee");
-
+        doc.fontSize(13)
+            .fillColor('#139647')
+            .text(`Empathy: ${this.props.result.empathy}`, 100, 435)
+            .fillColor('#db3c26')
+            .text(`Communication: ${this.props.result.communication}`, 100, 460)
+            .fillColor('#4267b1')
+            .text(`Shared-Decision Making: ${this.props.result.sharedecision}`, 100, 485)
+            .fillColor('black')
+            .text(`Overall Score: ${this.getOverallScore()}`, 100, 510)
+        
         doc.end();
         stream.on('finish', function() {
         // get a blob you can do whatever you like with
         const blob = stream.toBlob('application/pdf');
         const url = stream.toBlobURL('application/pdf');
-        window.location = url
+        // window.location = url
+        let win = window.open(url, '_blank');
+        win.focus();
         })
     }
 

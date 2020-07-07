@@ -91,7 +91,7 @@ class ProfilePage extends Component{
                             </Tab.Pane>
                             <Tab.Pane eventKey="second">
                                 <CardDeck>
-                                    <ListofResults results={this.props.results}/>
+                                    <ListofResults results={this.props.results} username={this.props.username}/>
                                 </CardDeck>
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">
