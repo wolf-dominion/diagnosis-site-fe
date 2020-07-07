@@ -96,10 +96,10 @@ span {
   margin: auto;
 }
 
-.card-columns {
-  display: flex;
-  flex-flow: wrap;
-}
+// .card-columns {
+//   display: flex;
+//   flex-flow: wrap;
+// }
 
 #home-page-image-div {
   position: relative;
@@ -282,4 +282,30 @@ to {
   padding-top: 20px;
   height: 500px;
   width: 800px;
+}
+
+
+.card-columns {
+  padding-left: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-deck {
+  max-width: 1000px;
+}
+
+.card {
+  min-width: 50px;
+}
+
+.profile-page-padding {
+  padding-top: 100px;
+  padding-left: 30px;
+}
+
+.col-sm-3 {
+  padding-top: 20px;
+  background-color: #f7f7f7;
+  height: max-content;
 }

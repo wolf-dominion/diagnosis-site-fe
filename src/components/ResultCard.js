@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Button, Modal } from "react-bootstrap";
+import { CardColumns } from "react-bootstrap";
 import ChartPracticeApp from './ChartPracticeApp'
 import ChartForSingleResult from './ChartForSingleResult';
 import PDFDocument from '@react-pdf/pdfkit';
@@ -67,7 +68,7 @@ class ResultCard extends Component{
 
     render(){
         return (
-            <>
+            <div>
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
                     <Card.Title>Case {this.props.resultNumber + 1}</Card.Title>
@@ -95,7 +96,7 @@ class ResultCard extends Component{
                     <Button onClick={this.handleDownload}>Download PDF</Button>
                 </Modal.Footer>
             </Modal>
-            </>
+            </div>
         )
     }
 }

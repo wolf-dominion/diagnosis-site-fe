@@ -1,50 +1,54 @@
 import React, { Component } from 'react'
-import { Form, Button} from "react-bootstrap";
+import ContactForm from "./ContactForm";
+import axios from 'axios';
 
 
 class ContactPage extends Component{
 
     state = {
-        name: "",
-        email: "",
-        message: "",
-        // error: ""
+        name: '',
+        message: '',
+        email: '',
+        sent: false,
+        buttonText: 'Send Message'
+    }
+
+    formSubmit = (e) => {
+        e.preventDefault()
+      
+        this.setState({
+            buttonText: '...sending'
+        })
+      
+        let data = {
+            name: this.state.name,
+            email: this.state.email,
+            message: this.state.message
+        }
+        
+        axios.post('API_URI', data)
+        .then( res => {
+            this.setState({ sent: true }, this.resetForm())
+        })
+        .catch( () => {
+          console.log('Message not sent')
+        })
+      }
+
+      resetForm = () => {
+        this.setState({
+            name: '',
+            message: '',
+            email: '',
+            buttonText: 'Message Sent'
+        })
     }
 
     render(){
-
-        const {name, email, message} = this.state
-
         return(
             <div>
                 <div className="contact-form-container">
-                    <Form className="auth" onSubmit={this.handleSubmit}>
-                        <Form.Group controlId="formUpdateUserInfo">
-                            <Form.Label>Contact me:</Form.Label>
-                            <Form.Control 
-                                tpye="text"
-                                name="name"
-                                value={name}
-                                placeholder="name"
-                                onChange={this.handleChange}/>
-                            <Form.Control 
-                                tpye="text"
-                                name="email"
-                                value={email}
-                                placeholder="email"
-                                onChange={this.handleChange}/>
-                            <Form.Control
-                                tpye="text"
-                                name="message"
-                                value={message}
-                                placeholder="Write message here."
-                                onChange={this.handleChange}/>
-                        </Form.Group>
-                        <Button variant="primary" type="submit">
-                            send
-                        </Button>
-                        {/* <input type="submit" value="signup"></input> */}
-                    </Form>
+                   <ContactForm />
                 </div>
             </div>
         )
