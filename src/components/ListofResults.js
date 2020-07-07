@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { CardColumns } from "react-bootstrap";
 import ResultCard from './ResultCard'
 
 class ListofResults extends Component {
@@ -11,6 +10,7 @@ class ListofResults extends Component {
                 key={userResults.indexOf(userResult)}
                 resultNumber={userResults.indexOf(userResult)} 
                 result={userResult}
+                username={this.props.username}
                 />
         })
     }
@@ -18,7 +18,7 @@ class ListofResults extends Component {
     render(){
         return(
             <div>
-                {this.props.results.length > 0 ? <CardColumns> {this.generateCards()} </CardColumns>: <p>You have not taken the assement yet.</p>}
+                {this.props.results.length > 0 ? <div className="card-columns"> {this.generateCards()} </div> : <p>You have not taken the assement yet.</p>}
             </div>
         )
     }

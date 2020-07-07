@@ -1,37 +1,54 @@
 import React, { Component } from 'react'
+import ContactForm from "./ContactForm";
+import axios from 'axios';
+
 
 class ContactPage extends Component{
 
-    // componentDidMount() {
-    //     const script = document.createElement("script");
-    //     script.src = "/static/libs/your_script.js";
-    //     script.async = true;
-    //     script.onload = () => this.scriptLoaded();
-      
-    //     document.body.appendChild(script);
-    //   }
-
-
-    generateSvg = () => {
-        return <svg width="80" height="80">
-            <polygon points="40,40 80,0 80,80"/>
-            </svg>
-    }
-
-    // createPdf = () => {
-    //     const SVGtoPDF = require('svg-to-pdfkit');
-    //     SVGtoPDF(document, this.generateSvg(), 0, 0);
-    //     console.log('SVGtopdf', SVGtoPDF);
-        
+    // state = {
+    //     name: '',
+    //     message: '',
+    //     email: '',
+    //     sent: false,
+    //     buttonText: 'Send Message'
     // }
 
+    // formSubmit = (e) => {
+    //     e.preventDefault()
+      
+    //     this.setState({
+    //         buttonText: '...sending'
+    //     })
+      
+    //     let data = {
+    //         name: this.state.name,
+    //         email: this.state.email,
+    //         message: this.state.message
+    //     }
+        
+    //     axios.post('API_URI', data)
+    //     .then( res => {
+    //         this.setState({ sent: true }, this.resetForm())
+    //     })
+    //     .catch( () => {
+    //       console.log('Message not sent')
+    //     })
+    //   }
+
+    //   resetForm = () => {
+    //     this.setState({
+    //         name: '',
+    //         message: '',
+    //         email: '',
+    //         buttonText: 'Message Sent'
+    //     })
+    // }
 
     render(){
-        const svgItem = this.generateSvg()
         return(
-            <div>
+            <div className="form-holder">
                 <div className="contact-form-container">
-                    {svgItem}
+                   <ContactForm />
                 </div>
             </div>
         )

@@ -45,7 +45,7 @@ const colors = {
 };
 
 function ChartForSingleResult(props) {
-  
+  console.log(props.result.result.id)
   let dataArray = []
   let dataB
   let object = {}
@@ -65,7 +65,7 @@ function ChartForSingleResult(props) {
       <p>- This bar represents a single assessment you have taken.</p>
       <p>- Your goal is to have 3 total points in each domain (color) in an assessment, so 3 points in Empathy, 3 in Communication, and 3 in Shared-Decisions.</p>
       <h4>My progress</h4>
-      <StackedBarChart dataA={dataA} dataB={dataB} keys={keys} colors={colors} />
+      <StackedBarChart id={props.result.result.id} dataA={dataA} dataB={dataB} keys={keys} colors={colors} />
 
       <div className="fields">
         {allKeys.map(key => (

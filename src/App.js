@@ -8,6 +8,7 @@ import ContactPage from './components/ContactPage'
 import ProfilePage from './components/ProfilePage'
 import HomePage from './components/HomePage'
 import Header from './components/Header'
+import Signup from './components/Signup'
 
 import './App.scss'
 
@@ -117,18 +118,17 @@ class App extends Component{
         <Route exact path='/'>
           <HomePage />
         </Route>
-        {/* <Route path='/ProfilePage'>
-          <ProfilePage changeLoggedinStatus={this.changeLoggedinStatus} isLoggedIn={this.isLoggedIn} results={results} user_id={user_id} username={username} email={email} password={password}/>
+        <Route path="/Signup">
+          <div className="authenticate">
+            <Signup />
+          </div>
         </Route>
-        <Route path='/SimulationPage'>
-          <SimulationPage />
-        </Route> */}
         <Route  path="/ProfilePage"
           render={(routerProps)=> {
             return (
               <>
                 { this.state.loggedIn
-                  ? <ProfilePage changeLoggedinStatus={this.changeLoggedinStatus} isLoggedIn={this.isLoggedIn} results={results} user_id={user_id} username={username} email={email} password={password}/>
+                  ? <ProfilePage getResults={this.getResults} changeLoggedinStatus={this.changeLoggedinStatus} isLoggedIn={this.isLoggedIn} results={results} user_id={user_id} username={username} email={email} password={password}/>
                   : <Authenticate
                   {...routerProps}
                   loggedIn={loggedIn}

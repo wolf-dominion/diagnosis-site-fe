@@ -13,7 +13,7 @@ class HomePage extends Component{
         this.myDivToFocus = React.createRef()
      }
 
-    handleOnClick = (event) => {
+    handleOnClick = () => {
         //.current is verification that your element has rendered
         if(this.myDivToFocus.current){
             this.myDivToFocus.current.scrollIntoView({ 
@@ -44,7 +44,7 @@ class HomePage extends Component{
                                     <Button onClick={this.handleOnClick}>Learn More</Button>
                                 </div>
                                 <div className="col-6" id="sign-up">
-                                    <Button>Sign up</Button>
+                                    <Button href="Signup">Sign up</Button>
                                 </div>
                             </div>
                         </div>

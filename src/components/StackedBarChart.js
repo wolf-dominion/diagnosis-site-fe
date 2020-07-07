@@ -15,7 +15,7 @@ import useResizeObserver from "./UseResizeObserver";
  * Component that renders a StackedBarChart
  */
 
-function StackedBarChart({ dataA, dataB, keys, colors }) {
+function StackedBarChart({ id, dataA, dataB, keys, colors }) {
 
   let data = dataB
 
@@ -59,7 +59,7 @@ function StackedBarChart({ dataA, dataB, keys, colors }) {
       .attr("class", "layer")
       .attr("fill", layer => {
         
-        console.log('color: ', colors[layer.key])
+        //console.log('color: ', colors[layer.key])
         return colors[layer.key]
       })
       .selectAll("rect")
@@ -75,21 +75,23 @@ function StackedBarChart({ dataA, dataB, keys, colors }) {
     svg
       .select(".x-axis")
       .attr("transform", `translate(0, ${height-20})`)
+      .attr("fill", "#d3d3d3")
       .call(xAxis);
 
     const yAxis = axisLeft(yScale);
     svg
       .select(".y-axis")
       .attr("transform", `translate(30, -6)`)
+      .attr("fill", "#d3d3d3")
       .call(yAxis)
   }, [colors, data, dimensions, keys]);
 
   return (
     <React.Fragment>
       <div ref={wrapperRef} style={{ marginBottom: "2rem" }}>
-        <svg ref={svgRef}>
-          <g className="x-axis" />
-          <g className="y-axis" />
+        <svg id={`result-${id}`} ref={svgRef}>
+          <g className="x-axis"/>
+          <g className="y-axis"/>
         </svg>
       </div>
     </React.Fragment>

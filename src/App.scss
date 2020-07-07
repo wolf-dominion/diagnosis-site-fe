@@ -58,7 +58,6 @@ html {
 
 body {
   height: 100vh;
-  width: 100vw;
 }
 
 #root {
@@ -96,10 +95,10 @@ span {
   margin: auto;
 }
 
-.card-columns {
-  display: flex;
-  flex-flow: wrap;
-}
+// .card-columns {
+//   display: flex;
+//   flex-flow: wrap;
+// }
 
 #home-page-image-div {
   position: relative;
@@ -222,12 +221,12 @@ to {
   padding-right: 5rem;
 }
 
-.icon-size2 {
+// .icon-size2 {
 
-  max-height: 40%;
-  padding-top: 50%;
-  margin-left: 20%;
-}
+//   max-height: 40%;
+//   padding-top: 50%;
+//   margin-left: 20%;
+// }
 
 #center-welcome {
   text-align: center;
@@ -247,7 +246,7 @@ to {
   margin: auto;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background-color: #8cc896;
+  background-color: #f7f7f7;
 }
 
 .contact-form-container {
@@ -263,6 +262,11 @@ to {
   padding-top: 130px;
   margin: auto;
   width: 50%;
+}
+
+.form-holder {
+  max-width: 500px;
+  margin: auto;
 }
 
 // *{ border: 1px solid red; }
@@ -282,4 +286,38 @@ to {
   padding-top: 20px;
   height: 500px;
   width: 800px;
+}
+
+
+.card-columns {
+  padding-left: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-deck {
+  max-width: 1000px;
+}
+
+.card {
+  min-width: 50px;
+}
+
+.profile-page-padding {
+  padding-top: 100px;
+  padding-left: 30px;
+}
+
+.col-sm-3 {
+  padding-top: 20px;
+  background-color: #f7f7f7;
+  height: max-content;
+}
+
+.tab-content {
+  padding-left: 30px;
+}
+
+.row {
+  margin: 0;
 }
