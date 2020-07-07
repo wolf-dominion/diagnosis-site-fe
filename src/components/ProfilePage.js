@@ -11,6 +11,11 @@ class ProfilePage extends Component{
         showCloseAccount: false
     }
 
+    updateCards = () => {
+        console.log('getresults: ',this.props.getResults)
+        this.props.getResults()
+    }
+
     getProgress = () => {
         let allResults = this.props.results
 
@@ -21,7 +26,6 @@ class ProfilePage extends Component{
                 for (const [key, value] of Object.entries(resultObject)) {
                     if (Number.isInteger(value)){
                         if (key !== "user_id" && key !== "id"){
-                            // console.log(`${key}: ${value}`)
                             addedNum += value
                         }
                     } 
@@ -60,7 +64,6 @@ class ProfilePage extends Component{
 
     render(){
         return(
-            // <div className="main-render-div">
             <>
                 <h1>Welcome, {this.props.username}</h1>
                 <Button href="SimulationPage" className="new-case">+ New Case</Button>
@@ -73,7 +76,7 @@ class ProfilePage extends Component{
                             <Nav.Link eventKey="first">Progress</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                            <Nav.Link eventKey="second">Cases</Nav.Link>
+                            <Nav.Link eventKey="second" onClick={this.updateCards}>Cases</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
                             <Nav.Link eventKey="third">Account</Nav.Link>

@@ -27,10 +27,29 @@ class ResultCard extends Component{
         console.log('svgtopdf: ', SVGtoPDF)
 
         let doc = new PDFDocument({compress: false});
+        doc.fillColor('black')
+            .fillOpacity(1)
+            .strokeColor('black')
+            .strokeOpacity(1)
+            .lineWidth(1)
+            .undash()
+            .fontSize(12)
+            .font('Helvetica');
+        
         let svg = document.querySelector(`#result-${this.props.result.id}`);
 
         const stream = doc.pipe(blobStream());
-        let createdPDF = SVGtoPDF(doc, svg, 0, 0);
+        let createdPDF = SVGtoPDF(doc, svg, 0, 0, {'preserveAspectRatio': 'none'});
+        
+        doc.text('Hello!', 100, 100)
+
+        // doc.fillColor('green')
+        //     .text("wohoh", {
+        //         width: 465,
+        //         continued: true
+        //     }).fillColor('red')
+        //     .text("weeeee");
+
         doc.end();
         stream.on('finish', function() {
         // get a blob you can do whatever you like with

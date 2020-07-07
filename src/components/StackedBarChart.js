@@ -75,12 +75,14 @@ function StackedBarChart({ id, dataA, dataB, keys, colors }) {
     svg
       .select(".x-axis")
       .attr("transform", `translate(0, ${height-20})`)
+      .attr("fill", "#d3d3d3")
       .call(xAxis);
 
     const yAxis = axisLeft(yScale);
     svg
       .select(".y-axis")
       .attr("transform", `translate(30, -6)`)
+      .attr("fill", "#d3d3d3")
       .call(yAxis)
   }, [colors, data, dimensions, keys]);
 
@@ -88,8 +90,8 @@ function StackedBarChart({ id, dataA, dataB, keys, colors }) {
     <React.Fragment>
       <div ref={wrapperRef} style={{ marginBottom: "2rem" }}>
         <svg id={`result-${id}`} ref={svgRef}>
-          <g className="x-axis" />
-          <g className="y-axis" />
+          <g className="x-axis"/>
+          <g className="y-axis"/>
         </svg>
       </div>
     </React.Fragment>

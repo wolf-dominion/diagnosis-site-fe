@@ -128,7 +128,7 @@ class App extends Component{
             return (
               <>
                 { this.state.loggedIn
-                  ? <ProfilePage changeLoggedinStatus={this.changeLoggedinStatus} isLoggedIn={this.isLoggedIn} results={results} user_id={user_id} username={username} email={email} password={password}/>
+                  ? <ProfilePage getResults={this.getResults} changeLoggedinStatus={this.changeLoggedinStatus} isLoggedIn={this.isLoggedIn} results={results} user_id={user_id} username={username} email={email} password={password}/>
                   : <Authenticate
                   {...routerProps}
                   loggedIn={loggedIn}
