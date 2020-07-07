@@ -246,7 +246,7 @@ to {
   margin: auto;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background-color: #8cc896;
+  background-color: #f7f7f7;
 }
 
 .contact-form-container {
@@ -262,6 +262,11 @@ to {
   padding-top: 130px;
   margin: auto;
   width: 50%;
+}
+
+.form-holder {
+  max-width: 500px;
+  margin: auto;
 }
 
 // *{ border: 1px solid red; }
@@ -307,6 +312,10 @@ to {
   padding-top: 20px;
   background-color: #f7f7f7;
   height: max-content;
+}
+
+.tab-content {
+  padding-left: 30px;
 }
 
 .row {
