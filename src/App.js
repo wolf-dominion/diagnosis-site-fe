@@ -84,7 +84,7 @@ class App extends Component{
   }
 
   getUserInfo = () => {
-    const userURL = `https://guarded-atoll-24261.herokuapp.com/${this.state.user_id}`
+    const userURL = `https://guarded-atoll-24261.herokuapp.com/users/${this.state.user_id}`
     fetch(userURL, {
       method: 'GET',
       headers: {'content-type':'application/json',

@@ -55,8 +55,8 @@ class Signup extends Component {
                 
                 <Form className="auth" onSubmit={this.handleSubmit}>
                     <Form.Group controlId="formUpdateUserInfo">
-                        <Form.Label>Signup:</Form.Label>
-                        {this.state.error ? <p>{"Username already taken"}</p> : null}
+                        <Form.Label>Sign up:</Form.Label>
+                        {this.state.error ? <p style={{color: "red"}}>{"Username already taken"}</p> : null}
                         <Form.Control 
                             type="text"
                             name="username"
@@ -77,7 +77,7 @@ class Signup extends Component {
                             onChange={this.handleChange}/>
                     </Form.Group>
                     <Button variant="primary" type="submit">
-                        Signup
+                        Sign up
                     </Button>
                     {/* <input type="submit" value="signup"></input> */}
                 </Form>

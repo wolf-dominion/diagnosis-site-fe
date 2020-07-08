@@ -45,7 +45,7 @@ class Login extends Component {
                 <Form className="auth" onSubmit={this.handleSubmit}>
                     <Form.Group className="login" onSubmit={this.handleSubmit}>
                         <Form.Label>Login:</Form.Label>
-                        {this.state.error ? <p>{this.state.error}</p> : null}
+                        {this.state.error ? <p style={{color: "red"}}>{this.state.error}</p> : null}
 
                         
                         <Form.Control

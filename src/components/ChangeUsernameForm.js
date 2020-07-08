@@ -26,12 +26,12 @@ class ChangeUsernameForm extends Component{
         if (this.state.email !== ""){
             user["email"] = this.state.email
         }
-        if (this.state.password !== ""){
-            user["password"] = this.state.password
-        }
+        // if (this.state.password !== ""){
+        //     user["password"] = this.state.password
+        // }
 
         // const userURL = `http://localhost:3000/users/${this.props.userInfo.user_id}`
-        const userURL = `https://guarded-atoll-24261.herokuapp.com/${this.props.userInfo.user_id}`
+        const userURL = `https://guarded-atoll-24261.herokuapp.com/users/${this.props.userInfo.user_id}`
         fetch(userURL, {
             method: 'PATCH', 
             headers: {
@@ -67,11 +67,11 @@ class ChangeUsernameForm extends Component{
                                 name="email"
                                 placeholder={this.props.userInfo.email}
                                 onChange={this.handleChange}/>
-                            <Form.Control 
+                            {/* <Form.Control 
                                 type="password" 
                                 name="password"
                                 placeholder="password" 
-                                onChange={this.handleChange}/> 
+                                onChange={this.handleChange}/>  */}
                     </Form.Group>
                     <Button variant="primary" type="submit">
                         Submit
