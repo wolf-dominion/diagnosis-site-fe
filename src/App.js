@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom'
 import Authenticate from './components/Authenticate'
 
 import SimulationPage from './components/SimulationPage'
@@ -113,7 +113,7 @@ class App extends Component{
   }
 
   render(){
-    const {loggedIn, user_id, username, email, password, results, displaySignup} = this.state
+    const {loggedIn, user_id, username, email, password, results, displaySignupState} = this.state
     
     return (
       
@@ -172,6 +172,7 @@ class App extends Component{
                   {...routerProps}
                   loggedIn={loggedIn}
                   displaySignup={this.displaySignup}
+                  displaySignupState={displaySignupState}
                   changeLoggedinStatus={this.changeLoggedinStatus}/>
                 }
               </>

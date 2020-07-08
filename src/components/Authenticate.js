@@ -14,20 +14,6 @@ class Authenticate extends Component {
         this.setState({isLogin: !this.state.isLogin})
     }
 
-    shouldComponentUpdate(nextProps, nextState){
-        console.log('nextProps',nextProps);
-        console.log('nextState',nextState);
-        
-        // this.checkPropsForToggle()
-    }
-
-    checkPropsForToggle = () => {
-        console.log('props: ', this.props.location.state.id)
-        if (this.props.location.state.id) {
-            this.setState({isLogin: !this.state.isLogin})
-        }
-    }
-
     render(){
         //console.log('props: ', this.props);
         
@@ -36,8 +22,8 @@ class Authenticate extends Component {
             <div className="authenticate">
                 {isLogin 
                     ? 
-                        <Login 
-                            changeLoggedinStatus={this.props.changeLoggedinStatus}/> 
+                        (this.props.displaySignupState ? <Signup displaySignup={this.props.displaySignup} displaySignupState={this.props.displaySignupState} changeLoggedinStatus={this.props.changeLoggedinStatus}/> : 
+                            <Login changeLoggedinStatus={this.props.changeLoggedinStatus}/>) 
                     : 
                         <Signup 
                             changeLoggedinStatus={this.props.changeLoggedinStatus}/>
