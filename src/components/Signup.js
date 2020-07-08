@@ -58,7 +58,7 @@ class Signup extends Component {
                         <Form.Label>Signup:</Form.Label>
                         {this.state.error ? <p>{"Username already taken"}</p> : null}
                         <Form.Control 
-                            tpye="text"
+                            type="text"
                             name="username"
                             value={username}
                             placeholder="username"
@@ -70,7 +70,7 @@ class Signup extends Component {
                             placeholder="email"
                             onChange={this.handleChange}/>
                         <Form.Control
-                            tpye="password"
+                            type="password"
                             name="password"
                             value={password}
                             placeholder="password"

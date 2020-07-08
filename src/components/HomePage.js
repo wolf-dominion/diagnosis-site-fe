@@ -74,11 +74,11 @@ class HomePage extends Component{
                                             <br></br>
                                             - RESTful design
                                             <br></br>
-                                            - data visualization for individual simulation runthroughs
+                                            - Data visualization for individual and overall simulation runthroughs
                                             <br></br> 
-                                            - data visualization for overall trends in accumulated simulations
+                                            - Ability to download PDFs of your visualized results
                                             <br></br>
-                                            - Embedded Unity webGL project that performs fetch requests to backend
+                                            - Embedded Unity WebGL project that performs fetch requests to backend
                                             <br></br>
                                             <br></br>
                                             <h2>How it works:</h2>
@@ -87,7 +87,7 @@ class HomePage extends Component{
                                             the better and more connected a patient is with their doctor, the more likely
                                             they are to have better treatment outcomes and satisfaction. 
                                             <br></br>
-                                            The demo rates you based of of three criteria: empathy, communication, and shared decisions. 
+                                            The demo rates you based on 3 criteria: empathy, communication, and shared decisions. 
                                             The criteria were determined from this <a href="https://patientengagementhit.com/news/3-key-traits-of-a-positive-patient-provider-relationship">article</a>.
                                             <br></br>
                                             <br></br>

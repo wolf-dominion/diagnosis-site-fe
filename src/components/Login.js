@@ -49,7 +49,7 @@ class Login extends Component {
 
                         
                         <Form.Control
-                            tpye="text"
+                            type="text"
                             name="username"
                             value={username}
                             placeholder="username"
@@ -57,7 +57,7 @@ class Login extends Component {
                 
 
                         <Form.Control
-                            tpye="password"
+                            type="password"
                             name="password"
                             value={password}
                             placeholder="password"
