@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "build/diagnosis-site-fe",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
