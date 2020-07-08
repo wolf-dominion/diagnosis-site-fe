@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, } from "react-bootstrap";
+import { Link } from 'react-router-dom'
 import DoctorA from './images/doctor (1).svg'
 import DoctorB from './images/doctor.svg'
 import Heart from './images/cardiogram.svg'
@@ -44,7 +45,8 @@ class HomePage extends Component{
                                     <Button onClick={this.handleOnClick}>Learn More</Button>
                                 </div>
                                 <div className="col-6" id="sign-up">
-                                    <Button href="Signup">Sign up</Button>
+                                    {/* <Button href="Signup">Sign up</Button> */}
+                                    <Button as={Link} to="/Authenticate" displaySignup={true}>Sign up</Button>
                                 </div>
                             </div>
                         </div>
