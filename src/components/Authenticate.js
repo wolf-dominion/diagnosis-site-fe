@@ -15,7 +15,7 @@ class Authenticate extends Component {
     }
 
     componentDidMount(){
-        this.checkPropsForToggle
+        this.checkPropsForToggle()
     }
 
     checkPropsForToggle = () => {
