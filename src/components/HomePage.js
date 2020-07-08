@@ -24,6 +24,10 @@ class HomePage extends Component{
         }
     }
 
+    renderAuthComponent = () => {
+        console.log('render auth comp');
+    }
+
     render(){
         
         return(
@@ -46,7 +50,7 @@ class HomePage extends Component{
                                 </div>
                                 <div className="col-6" id="sign-up">
                                     {/* <Button href="Signup">Sign up</Button> */}
-                                    <Button as={Link} to="/Authenticate" displaySignup={true}>Sign up</Button>
+                                    <Button onClick={this.renderAuthComponent}>Sign up</Button>
                                 </div>
                             </div>
                         </div>
