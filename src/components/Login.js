@@ -16,7 +16,8 @@ class Login extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        const usersURL = 'http://localhost:3000/login'
+        // const usersURL = 'http://localhost:3000/login'
+        const usersURL = 'https://guarded-atoll-24261.herokuapp.com/login'
         fetch(usersURL, {
             method: 'POST', 
             headers: {

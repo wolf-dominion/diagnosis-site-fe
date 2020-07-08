@@ -18,7 +18,8 @@ class Signup extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         
-        const usersURL = 'http://localhost:3000/users'
+        // const usersURL = 'http://localhost:3000/users'
+        const usersURL = 'https://guarded-atoll-24261.herokuapp.com/users'
         fetch(usersURL, {
             method: 'POST', 
             headers: {

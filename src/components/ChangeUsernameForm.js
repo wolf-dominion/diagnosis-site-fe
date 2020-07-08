@@ -30,7 +30,8 @@ class ChangeUsernameForm extends Component{
             user["password"] = this.state.password
         }
 
-        const userURL = `http://localhost:3000/users/${this.props.userInfo.user_id}`
+        // const userURL = `http://localhost:3000/users/${this.props.userInfo.user_id}`
+        const userURL = `https://guarded-atoll-24261.herokuapp.com/${this.props.userInfo.user_id}`
         fetch(userURL, {
             method: 'PATCH', 
             headers: {
