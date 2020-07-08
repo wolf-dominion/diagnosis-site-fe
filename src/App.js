@@ -44,7 +44,8 @@ class App extends Component{
   }
 
   isLoggedIn = () => {
-    const resultsURL = 'http://localhost:3000/results'
+    // const resultsURL = 'http://localhost:3000/results'
+        const resultsURL = 'https://guarded-atoll-24261.herokuapp.com/results'
     fetch(resultsURL, {
       headers: {
         'authorization': `Bearer ${localStorage.token}`}
@@ -59,7 +60,7 @@ class App extends Component{
   }
 
   getResults = () => {
-    const resultsURL = 'http://localhost:3000/results'
+    const resultsURL = 'https://guarded-atoll-24261.herokuapp.com/results'
     fetch(resultsURL, {
       method: 'GET',
       headers: {'content-type':'application/json',
@@ -83,7 +84,7 @@ class App extends Component{
   }
 
   getUserInfo = () => {
-    const userURL = `http://localhost:3000/users/${this.state.user_id}`
+    const userURL = `https://guarded-atoll-24261.herokuapp.com/${this.state.user_id}`
     fetch(userURL, {
       method: 'GET',
       headers: {'content-type':'application/json',

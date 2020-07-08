@@ -48,7 +48,8 @@ class ProfilePage extends Component{
     }
 
     deleteAccount = () => {
-        const userURL = `http://localhost:3000/users/${this.props.user_id}`
+        // const userURL = `http://localhost:3000/users/${this.props.user_id}`
+        const userURL = `https://guarded-atoll-24261.herokuapp.com/${this.props.user_id}`
         fetch(userURL, {
             method: 'DELETE',
             headers: {
