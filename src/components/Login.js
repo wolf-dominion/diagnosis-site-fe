@@ -57,6 +57,7 @@ class Login extends Component {
                 
 
                         <Form.Control
+                            classname="form-control"
                             type="password"
                             name="password"
                             value={password}
