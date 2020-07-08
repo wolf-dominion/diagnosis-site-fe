@@ -26,11 +26,7 @@ class HomePage extends Component{
 
     renderAuthComponent = () => {
         console.log('render auth comp');
-        <Redirect to={{
-            pathname: '/Authenticate',
-            state: { id: '123' }
-        }}
-/>
+        this.props.displaySignup
     }
 
     render(){

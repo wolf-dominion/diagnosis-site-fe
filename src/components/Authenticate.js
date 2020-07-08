@@ -14,8 +14,11 @@ class Authenticate extends Component {
         this.setState({isLogin: !this.state.isLogin})
     }
 
-    componentWillMount(){
-        this.checkPropsForToggle()
+    shouldComponentUpdate(nextProps, nextState){
+        console.log('nextProps',nextProps);
+        console.log('nextState',nextState);
+        
+        // this.checkPropsForToggle()
     }
 
     checkPropsForToggle = () => {

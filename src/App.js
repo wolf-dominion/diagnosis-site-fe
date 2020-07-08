@@ -19,7 +19,8 @@ class App extends Component{
     username: "",
     email: "",
     password: "",
-    results: []
+    results: [],
+    displaySignupState: false
   }
 
   componentDidMount(){
@@ -107,8 +108,12 @@ class App extends Component{
     this.setState({password: response.password_digest})
   }
 
+  displaySignup = () => {
+    this.setState({displaySignupState: true})
+  }
+
   render(){
-    const {loggedIn, user_id, username, email, password, results} = this.state
+    const {loggedIn, user_id, username, email, password, results, displaySignup} = this.state
     
     return (
       
@@ -117,7 +122,7 @@ class App extends Component{
         <div className="app">
 
         <Route exact path='/'>
-          <HomePage />
+          <HomePage displaySignup={this.displaySignup}/>
         </Route>
         <Route path="/Signup">
           <div className="authenticate">
@@ -166,6 +171,7 @@ class App extends Component{
                   : <Authenticate
                   {...routerProps}
                   loggedIn={loggedIn}
+                  displaySignup={this.displaySignup}
                   changeLoggedinStatus={this.changeLoggedinStatus}/>
                 }
               </>
