@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Button, } from "react-bootstrap";
-import { Link } from 'react-router-dom'
 import DoctorA from './images/doctor (1).svg'
 import DoctorB from './images/doctor.svg'
 import Heart from './images/cardiogram.svg'
 import DocumentIcon from './images/document.svg'
+import {BrowserRouter as Redirect} from 'react-router-dom'
 
 class HomePage extends Component{
     constructor(props){
@@ -26,6 +26,11 @@ class HomePage extends Component{
 
     renderAuthComponent = () => {
         console.log('render auth comp');
+        <Redirect to={{
+            pathname: '/Authenticate',
+            state: { id: '123' }
+        }}
+/>
     }
 
     render(){

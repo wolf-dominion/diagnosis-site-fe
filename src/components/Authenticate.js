@@ -14,12 +14,13 @@ class Authenticate extends Component {
         this.setState({isLogin: !this.state.isLogin})
     }
 
-    componentDidMount(){
+    componentWillMount(){
         this.checkPropsForToggle()
     }
 
     checkPropsForToggle = () => {
-        if (this.props.displaySignup) {
+        console.log('props: ', this.props.location.state.id)
+        if (this.props.location.state.id) {
             this.setState({isLogin: !this.state.isLogin})
         }
     }
