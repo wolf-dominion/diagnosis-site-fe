@@ -31,11 +31,13 @@ class SimulationPage extends Component{
                     </div>
                     <div className="row">
                         <span id="sim-explanation">
-                            When you click begin, you will be shown 3 sets of questions. 
+                            When you click begin, you will be shown 3 sets of questions.
                             <br></br>
                             Click on the question you think would be the most optimal to ask a patient. 
                             <br></br>
-                            Note: These are just sample questions and are not representative of a final product.
+                            These are sample questions and are not representative of a final product.
+                            <br></br>
+                            <strong>Note: Simulation may take a minute or two to load!</strong>
                         </span>
                     </div>
                     <div className="row">

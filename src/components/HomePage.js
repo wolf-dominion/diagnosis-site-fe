@@ -51,7 +51,6 @@ class HomePage extends Component{
                                     <Button onClick={this.handleOnClick}>Learn More</Button>
                                 </div>
                                 <div className="col-6" id="sign-up">
-                                    {/* <Button href="Signup">Sign up</Button> */}
                                         <Link className="btn btn-primary" onClick={this.renderAuthComponent} to="/Authenticate">Sign up
                                         </Link>
                                 </div>
@@ -61,7 +60,7 @@ class HomePage extends Component{
                         </div>
                     </div>
                     <div className="row" id="second-half-home-page">
-                        <div style={{backgroundColor: "white"}} className={"col"} > 
+                        <div style={{backgroundColor: "white"}} className={"col footer"} > 
                             <div className="row subRow">
                                 <div className={"col-6"}> 
                                     <div className="row subRow about-site-text about-site-header">
