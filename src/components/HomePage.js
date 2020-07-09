@@ -51,7 +51,6 @@ class HomePage extends Component{
                                     <Button onClick={this.handleOnClick}>Learn More</Button>
                                 </div>
                                 <div className="col-6" id="sign-up">
-                                    {/* <Button href="Signup">Sign up</Button> */}
                                         <Link className="btn btn-primary" onClick={this.renderAuthComponent} to="/Authenticate">Sign up
                                         </Link>
                                 </div>

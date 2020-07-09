@@ -152,9 +152,13 @@ span {
 
 #intro-text-container {
   margin-top: 10rem;
-  // margin-left: 1rem;
   text-align: center;
+  border-radius: 25px;
+  padding: 15px;
+  background-color: rgba(245, 245, 245, 0.7);
+  margin-left: 30px;
 }
+
 
 .bold-font {
   font-weight: bold;
