@@ -14,7 +14,7 @@ A virtual simulation and progress tracking app to help doctors improve their int
 Have you ever felt like you weren't listened to by your doctor? Maybe they never had official training on communicating with patients. Studies show that patients are more likely to have successful treatment when they a positive experience in the office. DiagnoSIM is a website for doctors to engage with a virtual patient via simulation, and assess and track their interpersonal communication skill development. 
 
 ## Intro Video
-[DiagnoSIM demo on YouTube](link)
+[DiagnoSIM demo on YouTube](https://studio.youtube.com/video/oocTaGcU2X8/edit/basic)
 
 ## Technologies
 * React
