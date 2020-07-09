@@ -121,9 +121,9 @@ class HomePage extends Component{
                                     </div>
                                 </div>
                             </div>
-                            <div ref={this.myDivToFocus} className="row subRow" id="home-page-footer"></div>
                         </div>
                     </div>
+                            <div ref={this.myDivToFocus} className="row subRow" id="home-page-footer"></div>
                 </div>
             </div>
 

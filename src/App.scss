@@ -219,6 +219,7 @@ to {
 #home-page-footer {
   background-color: #8cc896;
   height: 10%;
+  width: 100%;
 }
 
 #icons-home-page-container {
@@ -251,6 +252,9 @@ to {
   padding-top: 3rem;
   padding-bottom: 3rem;
   background-color: #f7f7f7;
+  border-radius: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .contact-form-container {
