@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { Card, Button, Modal } from "react-bootstrap";
-import { CardColumns } from "react-bootstrap";
-import ChartPracticeApp from './ChartPracticeApp'
 import ChartForSingleResult from './ChartForSingleResult';
 import PDFDocument from '@react-pdf/pdfkit';
 

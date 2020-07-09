@@ -27,17 +27,19 @@ class SimulationPage extends Component{
             <div className="sim-page-container">
                 <div className={"container-fluid p-0 "}>
                     <div className="row" id="sim-title">
-                        <h1 id="sim-header">Click Begin to get started</h1>
+                        <h2 id="sim-header">Click Begin to get started</h2>
                     </div>
                     <div className="row">
                         <span id="sim-explanation">
-                            When you click begin, you will be shown 3 sets of questions.
+                            <strong>Note: Simulation may take a minute or two to load!</strong>
                             <br></br>
-                            Click on the question you think would be the most optimal to ask a patient. 
+                            1. When you click begin, you will be shown 3 sets of questions.
+                            <br></br>
+                            2. Click on the question you think would be the most optimal to ask a patient. 
+                            <br></br>
+                            3. Click "return to main screen", then go to "My Profile" to view your progress! 
                             <br></br>
                             These are sample questions and are not representative of a final product.
-                            <br></br>
-                            <strong>Note: Simulation may take a minute or two to load!</strong>
                         </span>
                     </div>
                     <div className="row">

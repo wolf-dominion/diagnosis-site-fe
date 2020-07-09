@@ -2,9 +2,11 @@ import React from 'react'
 import { Nav, Navbar } from "react-bootstrap";
 import { Link } from 'react-router-dom'
 
-function Header({loggedIn, changeLoggedinStatus}) {
+function Header({loggedIn, changeLoggedinStatus, getResults}) {
 
-    //console.log('loggedIn from Header: ', loggedIn);
+    function updateResults() {
+        getResults()
+    }
     
     return(
             <Navbar className="w-auto p-3 fixed-top" collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -17,7 +19,7 @@ function Header({loggedIn, changeLoggedinStatus}) {
                     <Nav>
                     <Nav.Link as={Link} to="/">Home</Nav.Link>
                     <Nav.Link as={Link} to="SimulationPage">Simulation</Nav.Link>
-                    <Nav.Link as={Link} to="ProfilePage">My Profile</Nav.Link>
+                    <Nav.Link as={Link} onClick={updateResults} to="ProfilePage">My Profile</Nav.Link>
                     <Nav.Link as={Link} to="ContactPage">Contact</Nav.Link>
 
                     <Nav.Link 
