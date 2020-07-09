@@ -11,7 +11,15 @@ class Authenticate extends Component {
     }
     
     toggle = () => {
-        this.setState({isLogin: !this.state.isLogin})
+        
+        if (this.props.displaySignupState){
+            // this.setState({isLogin: !this.state.isLogin})
+            this.props.displaySignup()
+        }
+        else {
+            this.setState({isLogin: !this.state.isLogin})
+        }
+
     }
 
     render(){
@@ -22,15 +30,18 @@ class Authenticate extends Component {
             <div className="authenticate">
                 {isLogin 
                     ? 
-                        <Login 
-                            changeLoggedinStatus={this.props.changeLoggedinStatus}/> 
+                        (this.props.displaySignupState ? <Signup displaySignup={this.props.displaySignup} displaySignupState={this.props.displaySignupState} changeLoggedinStatus={this.props.changeLoggedinStatus}/> : 
+                            <Login changeLoggedinStatus={this.props.changeLoggedinStatus}/>) 
                     : 
                         <Signup 
                             changeLoggedinStatus={this.props.changeLoggedinStatus}/>
                 }
                 <div className="auth-button">
                     <Button onClick={this.toggle}>
-                        {isLogin ? "Sign Up?" : "Login?"}
+                        {isLogin ?
+                            (this.props.displaySignupState ? "Login" : "Sign Up?") 
+                            : 
+                                "Login?"}
                     </Button>
                 </div>
             </div>

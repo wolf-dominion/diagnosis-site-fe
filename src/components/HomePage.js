@@ -4,6 +4,7 @@ import DoctorA from './images/doctor (1).svg'
 import DoctorB from './images/doctor.svg'
 import Heart from './images/cardiogram.svg'
 import DocumentIcon from './images/document.svg'
+import { Link } from 'react-router-dom';
 
 class HomePage extends Component{
     constructor(props){
@@ -21,6 +22,12 @@ class HomePage extends Component{
                block: "nearest"
             })
         }
+    }
+
+    renderAuthComponent = () => {
+        console.log('render auth comp');
+        this.props.displaySignup()
+        return true
     }
 
     render(){
@@ -44,7 +51,9 @@ class HomePage extends Component{
                                     <Button onClick={this.handleOnClick}>Learn More</Button>
                                 </div>
                                 <div className="col-6" id="sign-up">
-                                    <Button href="Signup">Sign up</Button>
+                                    {/* <Button href="Signup">Sign up</Button> */}
+                                        <Link className="btn btn-primary" onClick={this.renderAuthComponent} to="/Authenticate">Sign up
+                                        </Link>
                                 </div>
                             </div>
                         </div>

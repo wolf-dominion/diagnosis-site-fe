@@ -17,7 +17,9 @@ class Signup extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        
+        if (this.props.displaySignupState){
+            this.props.displaySignup()
+        }
         // const usersURL = 'http://localhost:3000/users'
         const usersURL = 'https://guarded-atoll-24261.herokuapp.com/users'
         fetch(usersURL, {
@@ -49,7 +51,6 @@ class Signup extends Component {
 
     render(){
         const {username, email, password} = this.state
-        
         return(
             <div>
                 

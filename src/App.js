@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom'
 import Authenticate from './components/Authenticate'
 
 import SimulationPage from './components/SimulationPage'
@@ -19,7 +19,8 @@ class App extends Component{
     username: "",
     email: "",
     password: "",
-    results: []
+    results: [],
+    displaySignupState: false
   }
 
   componentDidMount(){
@@ -107,8 +108,12 @@ class App extends Component{
     this.setState({password: response.password_digest})
   }
 
+  displaySignup = () => {
+    this.setState({displaySignupState: !this.state.displaySignupState})
+  }
+
   render(){
-    const {loggedIn, user_id, username, email, password, results} = this.state
+    const {loggedIn, user_id, username, email, password, results, displaySignupState} = this.state
     
     return (
       
@@ -117,7 +122,7 @@ class App extends Component{
         <div className="app">
 
         <Route exact path='/'>
-          <HomePage />
+          <HomePage displaySignup={this.displaySignup}/>
         </Route>
         <Route path="/Signup">
           <div className="authenticate">
@@ -166,6 +171,8 @@ class App extends Component{
                   : <Authenticate
                   {...routerProps}
                   loggedIn={loggedIn}
+                  displaySignup={this.displaySignup}
+                  displaySignupState={displaySignupState}
                   changeLoggedinStatus={this.changeLoggedinStatus}/>
                 }
               </>

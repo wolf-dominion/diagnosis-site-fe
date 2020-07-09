@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ContactForm from "./ContactForm";
-import axios from 'axios';
+// import axios from 'axios';
 
 
 class ContactPage extends Component{
