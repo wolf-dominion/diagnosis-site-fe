@@ -12,6 +12,7 @@ class Authenticate extends Component {
     
     toggle = () => {
         this.setState({isLogin: !this.state.isLogin})
+        this.props.displaySignup()
     }
 
     render(){
@@ -30,7 +31,10 @@ class Authenticate extends Component {
                 }
                 <div className="auth-button">
                     <Button onClick={this.toggle}>
-                        {isLogin ? "Sign Up?" : "Login?"}
+                        {isLogin ?
+                            (this.props.displaySignupState ? "Login" : "Sign Up?") 
+                            : 
+                                "Login?"}
                     </Button>
                 </div>
             </div>
