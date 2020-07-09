@@ -4,6 +4,7 @@ import DoctorA from './images/doctor (1).svg'
 import DoctorB from './images/doctor.svg'
 import Heart from './images/cardiogram.svg'
 import DocumentIcon from './images/document.svg'
+import { Link } from 'react-router-dom';
 
 class HomePage extends Component{
     constructor(props){
@@ -51,7 +52,10 @@ class HomePage extends Component{
                                 </div>
                                 <div className="col-6" id="sign-up">
                                     {/* <Button href="Signup">Sign up</Button> */}
-                                    <Button onClick={this.renderAuthComponent} href="Authenticate">Sign up</Button>
+                                    <Button onClick={this.renderAuthComponent}>
+                                        <Link to="/Authenticate">Sign up
+                                        </Link>
+                                    </Button>
                                 </div>
                             </div>
                         </div>
