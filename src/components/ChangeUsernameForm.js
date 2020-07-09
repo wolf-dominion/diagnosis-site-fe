@@ -26,11 +26,7 @@ class ChangeUsernameForm extends Component{
         if (this.state.email !== ""){
             user["email"] = this.state.email
         }
-        // if (this.state.password !== ""){
-        //     user["password"] = this.state.password
-        // }
 
-        // const userURL = `http://localhost:3000/users/${this.props.userInfo.user_id}`
         const userURL = `https://guarded-atoll-24261.herokuapp.com/users/${this.props.userInfo.user_id}`
         fetch(userURL, {
             method: 'PATCH', 
