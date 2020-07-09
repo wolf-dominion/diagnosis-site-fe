@@ -57,6 +57,8 @@ Have you ever felt like you weren't listened to by your doctor? Maybe they never
 Project v1 is finished and fully functional. 
 I plan on implementing an email system for the contact page in the upcoming weeks. 
 
+Stretch goal/challenge: Have a 3D model of doctor and patient in room to make the simulation more immersive. 
+
 ## Contact
 Created by [Hannah Drury](https://www.linkedin.com/in/hannah-drury-042a8391/)
 
