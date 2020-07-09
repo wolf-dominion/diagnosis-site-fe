@@ -109,7 +109,7 @@ class App extends Component{
   }
 
   displaySignup = () => {
-    this.setState({displaySignupState: !displaySignupState})
+    this.setState({displaySignupState: !this.state.displaySignupState})
   }
 
   render(){
