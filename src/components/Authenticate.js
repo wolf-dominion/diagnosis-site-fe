@@ -11,8 +11,15 @@ class Authenticate extends Component {
     }
     
     toggle = () => {
-        this.setState({isLogin: !this.state.isLogin})
-        this.props.displaySignup()
+        
+        if (this.props.displaySignupState){
+            this.setState({isLogin: !this.state.isLogin})
+            this.props.displaySignup()
+        }
+        else {
+            this.setState({isLogin: !this.state.isLogin})
+        }
+
     }
 
     render(){
