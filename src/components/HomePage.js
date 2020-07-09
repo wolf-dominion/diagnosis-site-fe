@@ -52,7 +52,7 @@ class HomePage extends Component{
                                 </div>
                                 <div className="col-6" id="sign-up">
                                     {/* <Button href="Signup">Sign up</Button> */}
-                                        <Link onClick={this.renderAuthComponent} to="/Authenticate">Sign up
+                                        <Link className="btn btn-primary" onClick={this.renderAuthComponent} to="/Authenticate">Sign up
                                         </Link>
                                 </div>
                             </div>
