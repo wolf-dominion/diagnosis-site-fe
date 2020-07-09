@@ -118,7 +118,7 @@ class App extends Component{
     return (
       
       <Router>
-        <Header loggedIn={loggedIn} changeLoggedinStatus={this.changeLoggedinStatus}/>
+        <Header loggedIn={loggedIn} changeLoggedinStatus={this.changeLoggedinStatus} getResults={this.getResults}/>
         <div className="app">
 
         <Route exact path='/'>
