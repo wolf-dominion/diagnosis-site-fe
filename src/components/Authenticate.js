@@ -13,7 +13,7 @@ class Authenticate extends Component {
     toggle = () => {
         
         if (this.props.displaySignupState){
-            this.setState({isLogin: !this.state.isLogin})
+            // this.setState({isLogin: !this.state.isLogin})
             this.props.displaySignup()
         }
         else {
