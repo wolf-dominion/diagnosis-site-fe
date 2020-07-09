@@ -157,6 +157,7 @@ span {
   padding: 15px;
   background-color: rgba(245, 245, 245, 0.7);
   margin-left: 30px;
+  max-width: 700px;
 }
 
 
@@ -329,4 +330,9 @@ to {
 
 .row {
   margin: 0;
+}
+
+.footer {
+  padding-left: 0px;
+  padding-right: 0px;
 }

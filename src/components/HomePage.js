@@ -60,7 +60,7 @@ class HomePage extends Component{
                         </div>
                     </div>
                     <div className="row" id="second-half-home-page">
-                        <div style={{backgroundColor: "white"}} className={"col"} > 
+                        <div style={{backgroundColor: "white"}} className={"col footer"} > 
                             <div className="row subRow">
                                 <div className={"col-6"}> 
                                     <div className="row subRow about-site-text about-site-header">
@@ -121,9 +121,9 @@ class HomePage extends Component{
                                     </div>
                                 </div>
                             </div>
+                            <div ref={this.myDivToFocus} className="row subRow" id="home-page-footer"></div>
                         </div>
                     </div>
-                            <div ref={this.myDivToFocus} className="row subRow" id="home-page-footer"></div>
                 </div>
             </div>
 
