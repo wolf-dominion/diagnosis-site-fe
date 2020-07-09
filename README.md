@@ -60,7 +60,7 @@ I plan on implementing an email system for the contact page in the upcoming week
 Stretch goal/challenge: Have a 3D model of doctor and patient in room to make the simulation more immersive. 
 
 ## Contact
-Created by [Hannah Drury](https://www.linkedin.com/in/hannah-drury-042a8391/)
+Created by Hannah Drury. [My LinkedIn](https://www.linkedin.com/in/hannah-drury-042a8391/)
 
 Feel free to contact me if you have questions or interest working together. 
 
